@@ -25,7 +25,6 @@
     "typescript": "3.5.3"
   },
   "devDependencies": {
-    "@ant-design/dark-theme": "^0.2.2",
     "@rescripts/cli": "^0.0.11",
     "@rescripts/rescript-env": "^0.0.10",
     "babel-plugin-import": "^1.12.0",

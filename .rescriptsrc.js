@@ -1,3 +1,5 @@
+const darkTheme = require("./src/theme");
+
 module.exports = [
   // set target on webpack config
   config => {
@@ -37,7 +39,7 @@ module.exports = [
           loader: "less-loader",
           options: {
             javascriptEnabled: true,
-            modifyVars: require("@ant-design/dark-theme")
+            modifyVars: darkTheme
           }
         }
       ]
@@ -50,7 +52,7 @@ module.exports = [
     RegExp.prototype.toJSON = RegExp.prototype.toString;
     Function.prototype.toJSON = Function.prototype.toString;
     // uncomment the line below to log the webpack config to the console
-    // console.log(JSON.stringify(config, null, 2));
+    // console.log(JSON.stringify(config.module.rules, null, 2));
     return config;
   }
 ];
