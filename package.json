@@ -29,6 +29,8 @@
     "typescript": "3.5.3"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
     "@rescripts/cli": "^0.0.11",
     "@rescripts/rescript-env": "^0.0.10",
     "babel-plugin-import": "^1.12.0",
@@ -36,8 +38,11 @@
     "cross-env": "^5.2.0",
     "electron": "^5.0.7",
     "electron-builder": "^21.0.15",
+    "husky": "^3.0.0",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
+    "lint-staged": "^9.2.0",
+    "prettier": "^1.18.2",
     "stylelint": "^10.1.0",
     "stylelint-config-prettier": "^5.2.0",
     "stylelint-config-standard": "^18.3.0",
@@ -47,6 +52,29 @@
     "tslint-eslint-rules": "^5.4.0",
     "tslint-react": "^4.0.0",
     "wait-on": "^3.3.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "tslint -p tsconfig.json --fix",
+      "prettier --single-quote --write",
+      "git add"
+    ],
+    "{*.json,.{babelrc,eslintrc,prettierrc,stylelintrc}}": [
+      "prettier --parser json --write",
+      "git add"
+    ],
+    "*.less": [
+      "stylelint --syntax scss --fix",
+      "prettier --single-quote --write",
+      "git add"
+    ],
+    "*.{yml,md}": ["prettier --single-quote --write", "git add"]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
   },
   "homepage": "https://your-website.com",
   "author": {
@@ -62,10 +90,7 @@
     "mac": {
       "category": "public.app-category.utilities"
     },
-    "files": [
-      "build/**/*",
-      "node_modules/**/*"
-    ],
+    "files": ["build/**/*", "node_modules/**/*"],
     "directories": {
       "buildResources": "assets"
     }
@@ -74,11 +99,7 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
