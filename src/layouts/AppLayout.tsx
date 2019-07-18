@@ -10,7 +10,7 @@ interface Props {
 }
 
 const AppLayout: React.FC<Props> = (props: Props) => {
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
   const toggle = () => setCollapsed(!collapsed);
 
   return (
@@ -72,9 +72,7 @@ const AppLayout: React.FC<Props> = (props: Props) => {
           </Breadcrumb>
           <div className="container">{props.children}</div>
         </Content>
-        <Footer style={{ textAlign: 'center' }}>
-          Ant Design &copy; 2018 Created by React App
-        </Footer>
+        <Footer className="footer">React App &copy; 2018 Fomo Bros</Footer>
       </Layout>
     </Layout>
   );

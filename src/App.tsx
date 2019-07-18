@@ -1,11 +1,12 @@
 import React from 'react';
 import AppLayout from './layouts/AppLayout';
-import DemoForm from './components/DemoForm';
+// import DemoForm from './components/DemoForm';
+import Home from './components/Home';
 
 const App: React.FC = () => {
   return (
     <AppLayout>
-      <DemoForm />
+      <Home />
     </AppLayout>
   );
 };
