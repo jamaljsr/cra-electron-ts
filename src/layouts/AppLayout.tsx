@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Layout, Menu, Breadcrumb, Icon } from "antd";
-import "./AppLayout.less";
+import React, { useState } from 'react';
+import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import './AppLayout.less';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -17,7 +17,7 @@ const AppLayout: React.FC<Props> = (props: Props) => {
     <Layout className="layout">
       <Sider collapsible collapsed={collapsed} trigger={null}>
         <div className="logo" />
-        <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
+        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
           <Menu.Item key="1">
             <Icon type="pie-chart" />
             <span>Option 1</span>
@@ -61,7 +61,7 @@ const AppLayout: React.FC<Props> = (props: Props) => {
         <Header className="header">
           <Icon
             className="trigger"
-            type={collapsed ? "menu-unfold" : "menu-fold"}
+            type={collapsed ? 'menu-unfold' : 'menu-fold'}
             onClick={toggle}
           />
         </Header>
@@ -72,7 +72,7 @@ const AppLayout: React.FC<Props> = (props: Props) => {
           </Breadcrumb>
           <div className="container">{props.children}</div>
         </Content>
-        <Footer style={{ textAlign: "center" }}>
+        <Footer style={{ textAlign: 'center' }}>
           Ant Design &copy; 2018 Created by React App
         </Footer>
       </Layout>

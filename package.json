@@ -9,6 +9,7 @@
     "build": "rescripts build",
     "test": "rescripts test",
     "eject": "rescripts eject",
+    "lint": "tslint -p tsconfig.json",
     "postinstall": "electron-builder install-app-deps",
     "package": "yarn build && electron-builder build --publish never"
   },
@@ -34,6 +35,11 @@
     "electron-builder": "^21.0.15",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
+    "tslint": "^5.18.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-react": "^4.0.0",
     "wait-on": "^3.3.0"
   },
   "homepage": "https://your-website.com",
