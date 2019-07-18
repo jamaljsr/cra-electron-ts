@@ -1,6 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import { Button } from "antd";
+import "./App.css";
 
 const App: React.FC = () => {
   return (
@@ -18,9 +19,12 @@ const App: React.FC = () => {
         >
           Learn React
         </a>
+        <p>
+          <Button type="primary">Button</Button>
+        </p>
       </header>
     </div>
   );
-}
+};
 
 export default App;

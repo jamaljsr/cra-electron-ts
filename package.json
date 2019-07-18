@@ -2,7 +2,7 @@
   "name": "cra-electron-ts",
   "version": "0.1.0",
   "private": true,
-  "main": "electron/index.js",
+  "main": "public/electron.js",
   "scripts": {
     "dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "start": "rescripts start",
@@ -17,6 +17,7 @@
     "@types/node": "12.6.8",
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
+    "antd": "^3.20.3",
     "electron-is-dev": "^1.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -24,15 +25,19 @@
     "typescript": "3.5.3"
   },
   "devDependencies": {
+    "@ant-design/dark-theme": "^0.2.2",
     "@rescripts/cli": "^0.0.11",
     "@rescripts/rescript-env": "^0.0.10",
+    "babel-plugin-import": "^1.12.0",
     "concurrently": "^4.1.1",
     "cross-env": "^5.2.0",
     "electron": "^5.0.7",
     "electron-builder": "^21.0.15",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
     "wait-on": "^3.3.0"
   },
-  "homepage": "https://github.com/your.username/cra-electron-ts",
+  "homepage": "https://your-website.com",
   "author": {
     "name": "CRA Electron TS App",
     "email": "your.email@domain.com",
@@ -68,8 +73,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "rescripts": [
-    "env"
-  ]
+  }
 }
