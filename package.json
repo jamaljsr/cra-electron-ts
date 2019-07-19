@@ -14,7 +14,13 @@
     "lint-styles": "stylelint **/*.*less",
     "lint-styles-fix": "stylelint **/*.*less --fix",
     "postinstall": "electron-builder install-app-deps",
-    "package": "yarn build && electron-builder build --publish never"
+    "package": "yarn build && electron-builder build --publish never",
+    "package-all": "yarn build && electron-builder build -mwl",
+    "package-ci": "yarn postinstall && yarn build && electron-builder --publish onTagOrDraft",
+    "package-linux": "yarn build && electron-builder build --linux",
+    "package-win": "yarn build && electron-builder build --win --x64",
+    "release": "yarn test && yarn package",
+    "tsc": "tsc --noEmit"
   },
   "dependencies": {
     "@hot-loader/react-dom": "^16.8.6",
