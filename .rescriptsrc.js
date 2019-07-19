@@ -1,58 +1,63 @@
-const darkTheme = require("./src/theme");
+const darkTheme = require('./src/theme');
 
 module.exports = [
-  // set target on webpack config
-  config => {
-    config.target = "electron-renderer";
+  (config) => {
+    // set target on webpack config to support electrong
+    config.target = 'electron-renderer';
+    // add support for hot reload of hooks
+    config.resolve.alias['react-dom'] = '@hot-loader/react-dom';
     return config;
   },
-  // add babel-plugin-import for antd
   [
-    "use-babel-config",
+    'use-babel-config',
     {
-      presets: ["react-app"],
+      presets: ['react-app'],
       plugins: [
+        // add babel-plugin-import for antd
         [
-          "import",
+          'import',
           {
-            libraryName: "antd",
-            libraryDirectory: "es",
-            style: true
-          }
-        ]
-      ]
-    }
+            libraryName: 'antd',
+            libraryDirectory: 'es',
+            style: true,
+          },
+        ],
+        // adds support for live hot reload
+        'react-hot-loader/babel',
+      ],
+    },
   ],
   // add less-loader for antd
-  config => {
-    const rule = config.module.rules.find(rule => rule.oneOf);
+  (config) => {
+    const rule = config.module.rules.find((rule) => rule.oneOf);
     rule.oneOf.unshift({
       test: /\.less$/,
       use: [
         {
-          loader: "style-loader"
+          loader: 'style-loader',
         },
         {
-          loader: "css-loader"
+          loader: 'css-loader',
         },
         {
-          loader: "less-loader",
+          loader: 'less-loader',
           options: {
             javascriptEnabled: true,
-            modifyVars: darkTheme
-          }
-        }
-      ]
+            modifyVars: darkTheme,
+          },
+        },
+      ],
     });
 
     return config;
   },
-  config => {
+  (config) => {
     // helper function to troubleshoot webpack config issues
     RegExp.prototype.toJSON = RegExp.prototype.toString;
-    Function.prototype.toJSON = Function.prototype.toString;
+    Function.prototype.toJSON = () => 'function() { }'; // Function.prototype.toString;
     // uncomment the line below to log the webpack config to the console
-    // console.log(JSON.stringify(config.module.rules, null, 2));
+    // console.log(JSON.stringify(config.resolve, null, 2));
+    // process.exit(1);
     return config;
-  }
+  },
 ];

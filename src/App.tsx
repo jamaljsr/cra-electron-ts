@@ -1,4 +1,5 @@
 import React from 'react';
+import { hot } from 'react-hot-loader/root';
 import AppLayout from './layouts/AppLayout';
 // import DemoForm from './components/DemoForm';
 import Home from './components/Home';
@@ -11,4 +12,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default hot(App);
