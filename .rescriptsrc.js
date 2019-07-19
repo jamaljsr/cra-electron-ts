@@ -1,4 +1,4 @@
-const darkTheme = require('./src/theme');
+// const darkTheme = require('./src/theme');
 
 module.exports = [
   (config) => {
@@ -43,7 +43,11 @@ module.exports = [
           loader: 'less-loader',
           options: {
             javascriptEnabled: true,
-            modifyVars: darkTheme,
+            modifyVars: {
+              '@primary-color': '#fa8c16',
+              '@component-background': '#e8e8e8',
+            },
+            // modifyVars: darkTheme,
           },
         },
       ],

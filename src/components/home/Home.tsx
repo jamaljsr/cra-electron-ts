@@ -1,5 +1,7 @@
 import React from 'react';
-import { Card, Button } from 'antd';
+import { Card } from 'antd';
+import { Link } from 'react-router-dom';
+import { COUNTER } from '../Routes';
 
 const Home = () => {
   return (
@@ -7,7 +9,7 @@ const Home = () => {
       <Card title="Welcome to React App">
         <p>Let's get you started...</p>
         <p>
-          <Button type="primary">Counter</Button>
+          Play with the <Link to={COUNTER}>Counter</Link>
         </p>
       </Card>
     </div>
