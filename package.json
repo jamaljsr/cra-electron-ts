@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@hot-loader/react-dom": "^16.8.6",
-    "antd": "^3.20.3",
+    "antd": "^3.20.5",
     "connected-react-router": "^6.5.2",
     "easy-peasy": "3.0.0-rc.4",
     "electron-is-dev": "^1.1.0",
