@@ -107,9 +107,4 @@ describe('Counter component', () => {
     expect(btn).toHaveTextContent('Increment Async');
     expect(getByTestId('error')).toHaveTextContent('bwahh!!');
   });
-
-  it('should render the default state of the ui correctly', () => {
-    const { container } = renderComponent();
-    expect(container.firstChild).toMatchSnapshot();
-  });
 });

@@ -44,9 +44,4 @@ describe('Home component', () => {
     fireEvent.click(btn);
     expect(getByTestId('success')).toHaveTextContent('Success Tips');
   });
-
-  it('should render the default state of the ui correctly', () => {
-    const { container } = renderComponent();
-    expect(container.firstChild).toMatchSnapshot();
-  });
 });
