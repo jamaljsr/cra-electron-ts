@@ -4,7 +4,10 @@ import { AppLayout } from './layouts';
 import { Home } from './home';
 import { Counter } from './counter';
 
-export default () => (
+export const HOME = '/';
+export const COUNTER = '/counter';
+
+const Routes = () => (
   <AppLayout>
     <Switch>
       <Route path={COUNTER} component={Counter} />
@@ -13,5 +16,4 @@ export default () => (
   </AppLayout>
 );
 
-export const HOME = '/';
-export const COUNTER = '/counter';
+export default Routes;

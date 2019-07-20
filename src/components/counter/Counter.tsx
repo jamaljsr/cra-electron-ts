@@ -7,9 +7,9 @@ import { HOME } from '../Routes';
 import './Counter.less';
 
 const Counter = () => {
-  const { count } = useStoreState((s) => s.counter);
+  const { count } = useStoreState(s => s.counter);
   const { increment, decrement, incrementIfOdd, incrementAsync } = useStoreActions(
-    (a) => a.counter,
+    a => a.counter,
   );
   const { execute: incrementAsyncCb, loading, error } = useAsyncCallback(() =>
     incrementAsync(),
@@ -18,7 +18,7 @@ const Counter = () => {
     increment,
     decrement,
     incrementIfOdd,
-  ].map((x) => () => x());
+  ].map(x => () => x());
 
   return (
     <div className="counter-body">
