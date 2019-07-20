@@ -9,6 +9,7 @@
     "build": "rescripts build",
     "test": "rescripts test --coverage",
     "eject": "rescripts eject",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore .",
     "lint-fix": "yarn lint --fix",
     "lint-styles": "stylelint **/*.*less",

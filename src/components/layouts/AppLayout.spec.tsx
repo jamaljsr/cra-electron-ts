@@ -8,12 +8,13 @@ import { createReduxStore } from '../../store';
 import AppLayout from './AppLayout';
 
 describe('AppLayout component', () => {
+  const history = createMemoryHistory();
   const renderComponent = () => {
     const store = createReduxStore();
     const app = (
       <StoreProvider store={store}>
         <Provider store={store as any}>
-          <ConnectedRouter history={createMemoryHistory()}>
+          <ConnectedRouter history={history}>
             <AppLayout>
               <p data-tid="hello">Hello World!</p>
             </AppLayout>
@@ -42,8 +43,23 @@ describe('AppLayout component', () => {
 
   it('should collapse menu when trigger clicked', () => {
     const { getByTestId } = renderComponent();
-    const btn = getByTestId('trigger');
-    fireEvent.click(btn);
+    fireEvent.click(getByTestId('trigger'));
     expect(getByTestId('sider')).toHaveClass('ant-layout-sider-collapsed');
+  });
+
+  it('should navigate to counter page when Counter link clicked', () => {
+    const { getByTestId } = renderComponent();
+    fireEvent.click(getByTestId('counter-link'));
+    expect(history.location.pathname).toEqual('/counter');
+  });
+
+  it('should navigate to home page when logo clicked', () => {
+    const { getByTestId } = renderComponent();
+    // first go to counter page
+    fireEvent.click(getByTestId('counter-link'));
+    // then click the logo
+    fireEvent.click(getByTestId('logo'));
+
+    expect(history.location.pathname).toEqual('/');
   });
 });
