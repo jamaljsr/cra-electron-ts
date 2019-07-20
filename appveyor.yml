@@ -41,5 +41,4 @@ test_script:
   - yarn tsc
   - yarn test
   - yarn coveralls
-  # - yarn build-e2e
-  # - yarn test-e2e
+  - yarn test-e2e

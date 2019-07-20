@@ -55,5 +55,4 @@ script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then yarn test -u; fi
   - if [[ "$TRAVIS_OS_NAME" != "linux" ]]; then yarn test; fi
   - yarn coveralls
-  # - yarn build-e2e
-  # - yarn test-e2e
+  - yarn test-e2e
