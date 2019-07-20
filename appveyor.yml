@@ -15,6 +15,10 @@ cache:
 matrix:
   fast_finish: true
 
+branches:
+  only:
+    - master
+
 build: off
 
 version: '{build}'
