@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component should render the default state of the ui correctly 1`] = `
+<div>
+  <div
+    class="ant-card ant-card-bordered"
+  >
+    <div
+      class="ant-card-head"
+    >
+      <div
+        class="ant-card-head-wrapper"
+      >
+        <div
+          class="ant-card-head-title"
+        >
+          Welcome to React App
+        </div>
+      </div>
+    </div>
+    <div
+      class="ant-card-body"
+    >
+      <p>
+        Let's get you started...
+      </p>
+      <p>
+        Play with the
+         
+        <a
+          data-tid="counter-link"
+          href="/counter"
+        >
+          Counter
+        </a>
+      </p>
+      <p>
+        <button
+          class="ant-btn"
+          data-tid="me-btn"
+          type="button"
+        >
+          <span>
+            Click Me!
+          </span>
+        </button>
+      </p>
+    </div>
+  </div>
+</div>
+`;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import { Link } from 'react-router-dom';
 import { HOME, COUNTER } from '../Routes';
-import './AppLayout.less';
+import styles from './AppLayout.module.less';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -16,10 +16,10 @@ const AppLayout: React.FC<Props> = (props: Props) => {
   const toggle = () => setCollapsed(!collapsed);
 
   return (
-    <Layout className="layout">
+    <Layout className={styles.layout}>
       <Sider collapsible collapsed={collapsed} trigger={null} data-tid="sider">
         <Link to={HOME} data-tid="logo">
-          <div className="logo" />
+          <div className={styles.logo} />
         </Link>
         <Menu theme="dark" mode="inline" selectable={false}>
           <Menu.Item key="1">
@@ -66,22 +66,22 @@ const AppLayout: React.FC<Props> = (props: Props) => {
         </Menu>
       </Sider>
       <Layout>
-        <Header className="header">
+        <Header className={styles.header}>
           <Icon
-            className="trigger"
+            className={styles.trigger}
             type={collapsed ? 'menu-unfold' : 'menu-fold'}
             onClick={toggle}
             data-tid="trigger"
           />
         </Header>
-        <Content className="content">
-          <Breadcrumb className="breadcrumb">
+        <Content className={styles.content}>
+          <Breadcrumb className={styles.breadcrumb}>
             <Breadcrumb.Item>User</Breadcrumb.Item>
             <Breadcrumb.Item>Bill</Breadcrumb.Item>
           </Breadcrumb>
-          <div className="container">{props.children}</div>
+          <div className={styles.container}>{props.children}</div>
         </Content>
-        <Footer className="footer">React App &copy; 2018 Fomo Bros</Footer>
+        <Footer className={styles.footer}>React App &copy; 2018 Fomo Bros</Footer>
       </Layout>
     </Layout>
   );

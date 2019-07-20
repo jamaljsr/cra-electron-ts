@@ -1,10 +1,8 @@
 import * as React from 'react';
 import { Alert, Button, Icon } from 'antd';
-import { Link } from 'react-router-dom';
 import { useStoreState, useStoreActions } from '../../store';
 import { useAsyncCallback } from 'react-async-hook';
-import { HOME } from '../Routes';
-import './Counter.less';
+import styles from './Counter.module.less';
 
 const Counter = () => {
   const { count } = useStoreState(s => s.counter);
@@ -21,26 +19,34 @@ const Counter = () => {
   ].map(x => () => x());
 
   return (
-    <div className="counter-body">
+    <div className={styles.body}>
       {error && <Alert message={error.message} type="error" data-tid="error" />}
-      <div className="back-button" data-tid="backButton">
-        <Link to={HOME}>
-          <i className="fa fa-arrow-left fa-3x" />
-        </Link>
-      </div>
-      <h1 className="counter" data-tid="counter">
+      <h1 className={styles.counter} data-tid="counter">
         {loading ? <Icon type="loading" data-tid="async-loader" /> : count}
       </h1>
-      <div className="btn-group">
-        <Button type="primary" icon="plus" data-tid="incr-btn" onClick={incrementCb}>
+      <div className={styles.btnGroup}>
+        <Button
+          type="primary"
+          icon="plus"
+          className={styles.btn}
+          data-tid="incr-btn"
+          onClick={incrementCb}
+        >
           Increment
         </Button>
-        <Button type="primary" icon="minus" data-tid="decr-btn" onClick={decrementCb}>
+        <Button
+          type="primary"
+          icon="minus"
+          className={styles.btn}
+          data-tid="decr-btn"
+          onClick={decrementCb}
+        >
           Decrement
         </Button>
         <Button
           type="primary"
           icon="question"
+          className={styles.btn}
           data-tid="odd-btn"
           onClick={incrementIfOddCb}
         >
@@ -49,6 +55,7 @@ const Counter = () => {
         <Button
           type="primary"
           icon="retweet"
+          className={styles.btn}
           data-tid="async-btn"
           onClick={incrementAsyncCb}
           loading={loading}

@@ -1,30 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Counter component should render the defualt state of the ui correctly 1`] = `
-<div
-  class="counter-body"
->
-  <div
-    class="back-button"
-    data-tid="backButton"
-  >
-    <a
-      href="/"
-    >
-      <i
-        class="fa fa-arrow-left fa-3x"
-      />
-    </a>
-  </div>
+exports[`Counter component should render the default state of the ui correctly 1`] = `
+<div>
   <h1
-    class="counter"
     data-tid="counter"
   >
     0
   </h1>
-  <div
-    class="btn-group"
-  >
+  <div>
     <button
       class="ant-btn ant-btn-primary"
       data-tid="incr-btn"

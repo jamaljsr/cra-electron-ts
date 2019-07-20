@@ -1,5 +1,35 @@
 // const darkTheme = require('./src/theme');
 
+const getLessLoader = (test, withModules) => {
+  return {
+    test,
+    use: [
+      { loader: 'style-loader' },
+      {
+        loader: 'css-loader',
+        options: !withModules
+          ? undefined
+          : {
+              sourceMap: true,
+              modules: true,
+              localIdentName: '[local]___[hash:base64:5]',
+            },
+      },
+      {
+        loader: 'less-loader',
+        options: {
+          javascriptEnabled: true,
+          modifyVars: {
+            '@primary-color': '#fa8c16',
+            '@component-background': '#e8e8e8',
+          },
+          // modifyVars: darkTheme,
+        },
+      },
+    ],
+  };
+};
+
 module.exports = [
   config => {
     // set target on webpack config to support electrong
@@ -30,28 +60,9 @@ module.exports = [
   // add less-loader for antd
   config => {
     const rule = config.module.rules.find(rule => rule.oneOf);
-    rule.oneOf.unshift({
-      test: /\.less$/,
-      use: [
-        {
-          loader: 'style-loader',
-        },
-        {
-          loader: 'css-loader',
-        },
-        {
-          loader: 'less-loader',
-          options: {
-            javascriptEnabled: true,
-            modifyVars: {
-              '@primary-color': '#fa8c16',
-              '@component-background': '#e8e8e8',
-            },
-            // modifyVars: darkTheme,
-          },
-        },
-      ],
-    });
+
+    rule.oneOf.unshift(getLessLoader(/\.less$/, false));
+    rule.oneOf.unshift(getLessLoader(/\.module\.less$/, true));
 
     return config;
   },
@@ -60,7 +71,7 @@ module.exports = [
     RegExp.prototype.toJSON = RegExp.prototype.toString;
     Function.prototype.toJSON = () => 'function() { }'; // Function.prototype.toString;
     // uncomment the line below to log the webpack config to the console
-    // console.log(JSON.stringify(config.resolve, null, 2));
+    // console.log(JSON.stringify(config.module.rules, null, 2));
     // process.exit(1);
     return config;
   },

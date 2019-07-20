@@ -14,7 +14,7 @@ import { createReduxStore } from '../../store';
 import Counter from './Counter';
 
 describe('Counter component', () => {
-  const renderCounter = () => {
+  const renderComponent = () => {
     const store = createReduxStore();
     const app = (
       <StoreProvider store={store}>
@@ -30,33 +30,33 @@ describe('Counter component', () => {
   };
 
   it('should contain default counter value of zero', () => {
-    const { getByTestId } = renderCounter();
+    const { getByTestId } = renderComponent();
     expect(getByTestId('counter')).toHaveTextContent('0');
   });
 
   it('should increment by one when plus btn is clicked', () => {
-    const { getByTestId } = renderCounter();
+    const { getByTestId } = renderComponent();
     const btn = getByTestId('incr-btn');
     fireEvent.click(btn);
     expect(getByTestId('counter')).toHaveTextContent('1');
   });
 
   it('should decrement by one when minus btn is clicked', () => {
-    const { getByTestId } = renderCounter();
+    const { getByTestId } = renderComponent();
     const btn = getByTestId('decr-btn');
     fireEvent.click(btn);
     expect(getByTestId('counter')).toHaveTextContent('-1');
   });
 
   it('should not increment when odd btn is clicked and count is even', () => {
-    const { getByTestId } = renderCounter();
+    const { getByTestId } = renderComponent();
     const btn = getByTestId('odd-btn');
     fireEvent.click(btn);
     expect(getByTestId('counter')).toHaveTextContent('0');
   });
 
   it('should increment by two when odd btn is clicked and count is odd', () => {
-    const { getByTestId } = renderCounter();
+    const { getByTestId } = renderComponent();
 
     // first increment to 1 so that the current count is odd
     const incr = getByTestId('incr-btn');
@@ -68,7 +68,7 @@ describe('Counter component', () => {
   });
 
   it('should show loader when async btn is clicked', async () => {
-    const { getByTestId } = renderCounter();
+    const { getByTestId } = renderComponent();
     const btn = getByTestId('async-btn');
     fireEvent.click(btn);
     const loader = await waitForElement(() => getByTestId('async-loader'));
@@ -76,7 +76,7 @@ describe('Counter component', () => {
   });
 
   it('should increment after some time when async btn is clicked', async () => {
-    const { getByTestId } = renderCounter();
+    const { getByTestId } = renderComponent();
     const btn = getByTestId('async-btn');
     fireEvent.click(btn);
 
@@ -89,7 +89,7 @@ describe('Counter component', () => {
   });
 
   it('should raise error when count is 3 and async btn is clicked', async () => {
-    const { getByTestId } = renderCounter();
+    const { getByTestId } = renderComponent();
 
     // first increment to 1 so that the current count is odd
     const incr = getByTestId('incr-btn');
@@ -108,8 +108,8 @@ describe('Counter component', () => {
     expect(getByTestId('error')).toHaveTextContent('bwahh!!');
   });
 
-  it('should render the defualt state of the ui correctly', () => {
-    const { container } = renderCounter();
+  it('should render the default state of the ui correctly', () => {
+    const { container } = renderComponent();
     expect(container.firstChild).toMatchSnapshot();
   });
 });
