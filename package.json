@@ -9,8 +9,8 @@
     "build": "rescripts build",
     "test": "rescripts test",
     "eject": "rescripts eject",
-    "lint": "tslint -p tsconfig.json",
-    "lint-fix": "tslint -p tsconfig.json --fix",
+    "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore .",
+    "lint-fix": "yarn lint --fix",
     "lint-styles": "stylelint **/*.*less",
     "lint-styles-fix": "stylelint **/*.*less --fix",
     "postinstall": "electron-builder install-app-deps",
@@ -24,15 +24,18 @@
   },
   "dependencies": {
     "@hot-loader/react-dom": "^16.8.6",
-    "@types/jest": "24.0.15",
-    "@types/node": "12.6.8",
-    "@types/react": "16.8.23",
-    "@types/react-dom": "16.8.4",
     "antd": "^3.20.5",
+    "connected-react-router": "^6.5.2",
+    "easy-peasy": "3.0.0-rc.4",
     "electron-is-dev": "^1.1.0",
+    "history": "^4.9.0",
     "react": "^16.8.6",
+    "react-async-hook": "^3.4.0",
     "react-dom": "^16.8.6",
     "react-hot-loader": "^4.12.8",
+    "react-redux": "^7.1.0",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "typescript": "3.5.3"
   },
@@ -41,33 +44,42 @@
     "@commitlint/config-conventional": "^8.1.0",
     "@rescripts/cli": "^0.0.11",
     "@rescripts/rescript-env": "^0.0.10",
+    "@types/jest": "24.0.15",
+    "@types/node": "12.6.8",
+    "@types/react": "16.8.23",
+    "@types/react-dom": "16.8.4",
+    "@types/react-redux": "^7.1.1",
+    "@types/react-router": "^5.0.3",
+    "@types/react-router-dom": "^4.3.4",
+    "@types/redux-logger": "^3.0.7",
+    "@typescript-eslint/eslint-plugin": "^1.12.0",
+    "@typescript-eslint/parser": "^1.12.0",
     "babel-plugin-import": "^1.12.0",
     "concurrently": "^4.1.1",
     "cross-env": "^5.2.0",
     "electron": "^5.0.7",
     "electron-builder": "^21.1.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.2",
     "husky": "^3.0.0",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "lint-staged": "^9.2.0",
     "prettier": "^1.18.2",
+    "redux-logger": "^3.0.6",
     "stylelint": "^10.1.0",
     "stylelint-config-prettier": "^5.2.0",
     "stylelint-config-standard": "^18.3.0",
-    "tslint": "^5.18.0",
-    "tslint-config-airbnb": "^5.11.1",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-eslint-rules": "^5.4.0",
-    "tslint-react": "^4.0.0",
     "wait-on": "^3.3.0"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "tslint -p tsconfig.json --fix",
+      "eslint --ext .ts,.tsx --fix",
       "prettier --single-quote --write",
       "git add"
     ],
-    "{*.json,.{babelrc,eslintrc,prettierrc,stylelintrc}}": [
+    "{.{babelrc,eslintrc,prettierrc,stylelintrc}}": [
       "prettier --parser json --write",
       "git add"
     ],
@@ -76,7 +88,10 @@
       "prettier --single-quote --write",
       "git add"
     ],
-    "*.{yml,md}": ["prettier --single-quote --write", "git add"]
+    "*.{yml,md}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
   },
   "husky": {
     "hooks": {
@@ -98,7 +113,10 @@
     "mac": {
       "category": "public.app-category.utilities"
     },
-    "files": ["build/**/*", "node_modules/**/*"],
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
     "directories": {
       "buildResources": "assets"
     }
@@ -107,7 +125,11 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
