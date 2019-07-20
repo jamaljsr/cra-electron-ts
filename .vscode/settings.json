@@ -1,4 +1,11 @@
 {
+  "files.associations": {
+    ".commitlintrc": "jsonc",
+    ".eslintrc": "jsonc",
+    ".prettierrc": "jsonc",
+    ".renovaterc": "jsonc",
+    ".stylelintrc": "json"
+  },
   "eslint.autoFixOnSave": true,
   "eslint.validate": [
     "javascript",

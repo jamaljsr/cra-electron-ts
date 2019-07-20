@@ -12,13 +12,13 @@ function createWindow() {
     width: isDev ? 1536 : 900,
     height: 680,
     webPreferences: {
-      nodeIntegration: true
-    }
+      nodeIntegration: true,
+    },
   });
   mainWindow.loadURL(
     isDev
       ? 'http://localhost:3000'
-      : `file://${path.join(__dirname, '../build/index.html')}`
+      : `file://${path.join(__dirname, '../build/index.html')}`,
   );
   if (isDev) {
     // Open the DevTools.
