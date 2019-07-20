@@ -1,7 +1,7 @@
 // const darkTheme = require('./src/theme');
 
 module.exports = [
-  (config) => {
+  config => {
     // set target on webpack config to support electrong
     config.target = 'electron-renderer';
     // add support for hot reload of hooks
@@ -28,8 +28,8 @@ module.exports = [
     },
   ],
   // add less-loader for antd
-  (config) => {
-    const rule = config.module.rules.find((rule) => rule.oneOf);
+  config => {
+    const rule = config.module.rules.find(rule => rule.oneOf);
     rule.oneOf.unshift({
       test: /\.less$/,
       use: [
@@ -55,7 +55,7 @@ module.exports = [
 
     return config;
   },
-  (config) => {
+  config => {
     // helper function to troubleshoot webpack config issues
     RegExp.prototype.toJSON = RegExp.prototype.toString;
     Function.prototype.toJSON = () => 'function() { }'; // Function.prototype.toString;

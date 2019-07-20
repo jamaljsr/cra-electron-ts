@@ -15,6 +15,10 @@ cache:
 matrix:
   fast_finish: true
 
+branches:
+  only:
+    - master
+
 build: off
 
 version: '{build}'
@@ -36,6 +40,5 @@ test_script:
   - yarn lint-styles
   - yarn tsc
   - yarn test
-  # - yarn coveralls
-  # - yarn build-e2e
-  # - yarn test-e2e
+  - yarn coveralls
+  - yarn test-e2e

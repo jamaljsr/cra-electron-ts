@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import { Link } from 'react-router-dom';
+import { HOME, COUNTER } from '../Routes';
 import './AppLayout.less';
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -15,16 +17,22 @@ const AppLayout: React.FC<Props> = (props: Props) => {
 
   return (
     <Layout className="layout">
-      <Sider collapsible collapsed={collapsed} trigger={null}>
-        <div className="logo" />
-        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+      <Sider collapsible collapsed={collapsed} trigger={null} data-tid="sider">
+        <Link to={HOME} data-tid="logo">
+          <div className="logo" />
+        </Link>
+        <Menu theme="dark" mode="inline" selectable={false}>
           <Menu.Item key="1">
-            <Icon type="pie-chart" />
-            <span>Option 1</span>
+            <Link to={HOME}>
+              <Icon type="pie-chart" />
+              <span>Home</span>
+            </Link>
           </Menu.Item>
           <Menu.Item key="2">
-            <Icon type="desktop" />
-            <span>Option 2</span>
+            <Link to={COUNTER} data-tid="counter-link">
+              <Icon type="desktop" />
+              <span>Counter</span>
+            </Link>
           </Menu.Item>
           <SubMenu
             key="sub1"
@@ -63,6 +71,7 @@ const AppLayout: React.FC<Props> = (props: Props) => {
             className="trigger"
             type={collapsed ? 'menu-unfold' : 'menu-fold'}
             onClick={toggle}
+            data-tid="trigger"
           />
         </Header>
         <Content className="content">
