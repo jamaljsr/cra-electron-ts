@@ -13,10 +13,10 @@ const counterModel: CounterModel = {
   count: 0,
   // reducer actions (mutations allowed thx to immer)
   increment: action((state) => {
-    state.count += state.count;
+    state.count = state.count + 1;
   }),
   decrement: action((state) => {
-    state.count -= state.count;
+    state.count = state.count - 1;
   }),
   incrementIfOdd: action((state) => {
     if (state.count % 2 !== 0) {
