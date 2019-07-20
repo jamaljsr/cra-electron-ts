@@ -36,6 +36,6 @@ test_script:
   - yarn lint-styles
   - yarn tsc
   - yarn test
-  # - yarn coveralls
+  - yarn coveralls
   # - yarn build-e2e
   # - yarn test-e2e

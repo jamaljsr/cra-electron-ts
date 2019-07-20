@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Alert, Button } from 'antd';
+import { Alert, Button, Icon } from 'antd';
 import { Link } from 'react-router-dom';
 import { useStoreState, useStoreActions } from '../../store';
 import { useAsyncCallback } from 'react-async-hook';
@@ -22,26 +22,26 @@ const Counter = () => {
 
   return (
     <div className="counter-body">
-      {error && <Alert message={error.message} type="error" />}
+      {error && <Alert message={error.message} type="error" data-tid="error" />}
       <div className="back-button" data-tid="backButton">
         <Link to={HOME}>
           <i className="fa fa-arrow-left fa-3x" />
         </Link>
       </div>
       <h1 className="counter" data-tid="counter">
-        {count}
+        {loading ? <Icon type="loading" data-tid="async-loader" /> : count}
       </h1>
       <div className="btn-group">
         <Button type="primary" icon="plus" data-tid="incr-btn" onClick={incrementCb}>
           Increment
         </Button>
-        <Button type="primary" icon="minus" data-tid="incr-btn" onClick={decrementCb}>
+        <Button type="primary" icon="minus" data-tid="decr-btn" onClick={decrementCb}>
           Decrement
         </Button>
         <Button
           type="primary"
           icon="question"
-          data-tid="incr-btn"
+          data-tid="odd-btn"
           onClick={incrementIfOddCb}
         >
           Increment Odd
@@ -49,7 +49,7 @@ const Counter = () => {
         <Button
           type="primary"
           icon="retweet"
-          data-tid="incr-btn"
+          data-tid="async-btn"
           onClick={incrementAsyncCb}
           loading={loading}
         >

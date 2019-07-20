@@ -54,6 +54,6 @@ script:
   # ignore snapshot tests on linux due to file incompatibility across different OS's
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then yarn test -u; fi
   - if [[ "$TRAVIS_OS_NAME" != "linux" ]]; then yarn test; fi
-  # - yarn coveralls
+  - yarn coveralls
   # - yarn build-e2e
   # - yarn test-e2e
