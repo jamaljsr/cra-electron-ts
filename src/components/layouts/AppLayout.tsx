@@ -15,7 +15,7 @@ const AppLayout: React.FC<Props> = (props: Props) => {
 
   return (
     <Layout className="layout">
-      <Sider collapsible collapsed={collapsed} trigger={null}>
+      <Sider collapsible collapsed={collapsed} trigger={null} data-tid="sider">
         <div className="logo" />
         <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
           <Menu.Item key="1">
@@ -63,6 +63,7 @@ const AppLayout: React.FC<Props> = (props: Props) => {
             className="trigger"
             type={collapsed ? 'menu-unfold' : 'menu-fold'}
             onClick={toggle}
+            data-tid="trigger"
           />
         </Header>
         <Content className="content">

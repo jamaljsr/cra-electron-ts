@@ -5,16 +5,18 @@ import { ConnectedRouter } from 'connected-react-router';
 import { Provider } from 'react-redux';
 import { createMemoryHistory } from 'history';
 import { createReduxStore } from '../../store';
-import Home from './Home';
+import AppLayout from './AppLayout';
 
-describe('Home component', () => {
+describe('AppLayout component', () => {
   const renderComponent = () => {
     const store = createReduxStore();
     const app = (
       <StoreProvider store={store}>
         <Provider store={store as any}>
           <ConnectedRouter history={createMemoryHistory()}>
-            <Home />
+            <AppLayout>
+              <p data-tid="hello">Hello World!</p>
+            </AppLayout>
           </ConnectedRouter>
         </Provider>
       </StoreProvider>
@@ -23,25 +25,25 @@ describe('Home component', () => {
     return render(app);
   };
 
-  it('should contain a "Click Me!" button', () => {
+  it('should contain a "Hello World!" text', () => {
     const { getByTestId } = renderComponent();
-    expect(getByTestId('me-btn')).toHaveTextContent('Click Me!');
+    expect(getByTestId('hello')).toHaveTextContent('Hello World!');
   });
 
-  it('should contain a link to Counter page', () => {
+  it('should contain a collapse trigger', () => {
     const { getByTestId } = renderComponent();
-    expect(getByTestId('counter-link')).toHaveTextContent('Counter');
+    expect(getByTestId('trigger')).toBeTruthy();
   });
 
-  it('should not show alert message', () => {
-    const { queryByTestId } = renderComponent();
-    expect(queryByTestId('success')).toBeFalsy();
+  it('should be expanded by default', () => {
+    const { getByTestId } = renderComponent();
+    expect(getByTestId('sider')).not.toHaveClass('ant-layout-sider-collapsed');
   });
 
-  it('should show alert after button is clicked', () => {
+  it('should collapse menu when trigger clicked', () => {
     const { getByTestId } = renderComponent();
-    const btn = getByTestId('me-btn');
+    const btn = getByTestId('trigger');
     fireEvent.click(btn);
-    expect(getByTestId('success')).toHaveTextContent('Success Tips');
+    expect(getByTestId('sider')).toHaveClass('ant-layout-sider-collapsed');
   });
 });

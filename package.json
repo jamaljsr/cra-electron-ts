@@ -102,6 +102,16 @@
       "pre-commit": "lint-staged"
     }
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/src/index.tsx",
+      "!<rootDir>/src/react-app-env.d.ts",
+      "!<rootDir>/src/store/index.ts",
+      "!<rootDir>/src/theme/index.js"
+    ]
+  },
   "homepage": "https://your-website.com",
   "author": {
     "name": "CRA Electron TS App",
