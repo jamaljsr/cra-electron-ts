@@ -5,18 +5,26 @@ import isNotPackaged from 'electron-is-dev';
 
 const isDev = isNotPackaged && process.env.NODE_ENV !== 'production';
 
-if (isDev) {
-  debug();
-}
+let mainWindow: BrowserWindow | null;
 
 // use dev server for hot reload or file in production
 const url = isDev
   ? 'http://localhost:3000'
   : `file://${path.join(__dirname, '../build/index.html')}`;
 
-let mainWindow: BrowserWindow | null;
+// install react & redux chrome dev tools
+const installExtensions = async () => {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const installer = require('electron-devtools-installer');
+  const forceDownload = !!process.env.UPGRADE_EXTENSIONS;
+  const extensions = ['REACT_DEVELOPER_TOOLS', 'REDUX_DEVTOOLS'];
 
-function createWindow() {
+  return Promise.all(
+    extensions.map(name => installer.default(installer[name], forceDownload)),
+  ).catch(console.log);
+};
+
+const createWindow = async () => {
   mainWindow = new BrowserWindow({
     width: isDev ? 1536 : 900,
     height: 680,
@@ -28,11 +36,14 @@ function createWindow() {
   mainWindow.loadURL(url);
 
   if (isDev) {
+    debug();
+    await installExtensions();
     mainWindow.webContents.openDevTools();
+    mainWindow.maximize();
   }
 
   mainWindow.on('closed', () => (mainWindow = null));
-}
+};
 
 app.on('ready', createWindow);
 
