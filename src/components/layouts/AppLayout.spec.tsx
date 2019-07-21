@@ -49,14 +49,14 @@ describe('AppLayout component', () => {
 
   it('should navigate to counter page when Counter link clicked', () => {
     const { getByTestId } = renderComponent();
-    fireEvent.click(getByTestId('counter-link'));
+    fireEvent.click(getByTestId('nav-counter'));
     expect(history.location.pathname).toEqual('/counter');
   });
 
   it('should navigate to home page when logo clicked', () => {
     const { getByTestId } = renderComponent();
     // first go to counter page
-    fireEvent.click(getByTestId('counter-link'));
+    fireEvent.click(getByTestId('nav-counter'));
     // then click the logo
     fireEvent.click(getByTestId('logo'));
 
