@@ -14,7 +14,7 @@
     "lint-styles-fix": "stylelint **/*.*less --fix",
     "package": "yarn build && electron-builder build --publish never",
     "package-all": "yarn build && electron-builder build -mwl",
-    "package-ci": "yarn postinstall && yarn build && electron-builder --publish onTagOrDraft",
+    "package-ci": "yarn postinstall && yarn build && electron-builder build -c.extraMetadata.main=build/main.js --publish onTagOrDraft",
     "package-linux": "yarn build && electron-builder build --linux",
     "package-win": "yarn build && electron-builder build --win --x64",
     "postinstall": "electron-builder install-app-deps",
@@ -144,6 +144,41 @@
       "build/**/*",
       "node_modules/**/*"
     ],
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "msi"
+      ]
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "snap",
+        "AppImage"
+      ],
+      "category": "Development"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "jamaljsr",
+      "repo": "cra-electron-ts",
+      "private": false
+    },
     "directories": {
       "buildResources": "assets"
     }
