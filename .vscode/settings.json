@@ -2,6 +2,7 @@
   "files.associations": {
     ".commitlintrc": "jsonc",
     ".eslintrc": "jsonc",
+    ".electronbuildrc": "jsonc",
     ".prettierrc": "jsonc",
     ".renovaterc": "jsonc",
     ".stylelintrc": "json"

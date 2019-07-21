@@ -1,22 +1,30 @@
 {
   "name": "cra-electron-ts",
   "version": "0.1.0",
+  "homepage": "https://your-website.com",
+  "description": "CRA Electron Typescript App",
+  "author": {
+    "name": "CRA Electron TS App",
+    "email": "your.email@domain.com",
+    "url": "https://your-website.com"
+  },
   "main": "public/main.js",
   "scripts": {
     "build": "cross-env PUBLIC_URL=./ rescripts build",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-build": "electron-builder build -c.extraMetadata.main=build/main.js --config .electronbuildrc --publish onTagOrDraft",
     "eject": "rescripts eject",
     "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore .",
     "lint-all": "yarn tsc && yarn lint && yarn lint-styles",
     "lint-fix": "yarn lint --fix",
     "lint-styles": "stylelint **/*.*less",
     "lint-styles-fix": "stylelint **/*.*less --fix",
-    "package": "yarn build && electron-builder build --publish never",
-    "package-all": "yarn build && electron-builder build -mwl",
-    "package-ci": "yarn postinstall && yarn build && electron-builder build -c.extraMetadata.main=build/main.js --publish onTagOrDraft",
-    "package-linux": "yarn build && electron-builder build --linux",
-    "package-win": "yarn build && electron-builder build --win --x64",
+    "package": "yarn build && yarn electron-build",
+    "package-all": "yarn build && yarn electron-build -mwl",
+    "package-ci": "yarn postinstall && yarn build && yarn electron-build",
+    "package-linux": "yarn build && yarn electron-build --linux",
+    "package-win": "yarn build && yarn electron-build --win --x64",
     "postinstall": "electron-builder install-app-deps",
     "prestart": "tsc -p electron/tsconfig.json",
     "prebuild": "tsc -p electron/tsconfig.json",
@@ -125,63 +133,6 @@
       "!<rootDir>/src/store/index.ts",
       "!<rootDir>/src/theme/index.js"
     ]
-  },
-  "homepage": "https://your-website.com",
-  "author": {
-    "name": "CRA Electron TS App",
-    "email": "your.email@domain.com",
-    "url": "https://your-website.com"
-  },
-  "description": "CRA Electron Typescript App",
-  "build": {
-    "appId": "com.my-website.cra-electron-ts",
-    "productName": "CRA Electron Typescript App",
-    "copyright": "Copyright © 2019 ${author}",
-    "mac": {
-      "category": "public.app-category.utilities"
-    },
-    "files": [
-      "build/**/*",
-      "node_modules/**/*"
-    ],
-    "dmg": {
-      "contents": [
-        {
-          "x": 130,
-          "y": 220
-        },
-        {
-          "x": 410,
-          "y": 220,
-          "type": "link",
-          "path": "/Applications"
-        }
-      ]
-    },
-    "win": {
-      "target": [
-        "nsis",
-        "msi"
-      ]
-    },
-    "linux": {
-      "target": [
-        "deb",
-        "rpm",
-        "snap",
-        "AppImage"
-      ],
-      "category": "Development"
-    },
-    "publish": {
-      "provider": "github",
-      "owner": "jamaljsr",
-      "repo": "cra-electron-ts",
-      "private": false
-    },
-    "directories": {
-      "buildResources": "assets"
-    }
   },
   "eslintConfig": {
     "extends": "react-app"
