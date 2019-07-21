@@ -1,10 +1,9 @@
 {
   "name": "cra-electron-ts",
   "version": "0.1.0",
-  "private": true,
-  "main": "public/electron.js",
+  "main": "public/main.js",
   "scripts": {
-    "build": "rescripts build",
+    "build": "cross-env PUBLIC_URL=./ rescripts build",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "eject": "rescripts eject",
@@ -19,6 +18,8 @@
     "package-linux": "yarn build && electron-builder build --linux",
     "package-win": "yarn build && electron-builder build --win --x64",
     "postinstall": "electron-builder install-app-deps",
+    "prestart": "tsc -p electron/tsconfig.json",
+    "prebuild": "tsc -p electron/tsconfig.json",
     "release": "yarn test && yarn package",
     "start": "rescripts start",
     "test": "rescripts test --coverage",
@@ -32,6 +33,9 @@
     "antd": "^3.20.5",
     "connected-react-router": "^6.5.2",
     "easy-peasy": "3.0.0-rc.5",
+    "electron": "^5.0.7",
+    "electron-builder": "^21.1.1",
+    "electron-debug": "^3.0.1",
     "electron-is-dev": "^1.1.0",
     "history": "^4.9.0",
     "react": "^16.8.6",
@@ -65,8 +69,6 @@
     "concurrently": "^4.1.1",
     "coveralls": "^3.0.5",
     "cross-env": "^5.2.0",
-    "electron": "^5.0.7",
-    "electron-builder": "^21.1.1",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
@@ -120,7 +122,7 @@
       "!<rootDir>/src/theme/index.js"
     ]
   },
-  "homepage": "./",
+  "homepage": "https://your-website.com",
   "author": {
     "name": "CRA Electron TS App",
     "email": "your.email@domain.com",
