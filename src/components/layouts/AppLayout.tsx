@@ -23,13 +23,13 @@ const AppLayout: React.FC<Props> = (props: Props) => {
         </Link>
         <Menu theme="dark" mode="inline" selectable={false}>
           <Menu.Item key="1">
-            <Link to={HOME}>
+            <Link to={HOME} data-tid="nav-home">
               <Icon type="pie-chart" />
               <span>Home</span>
             </Link>
           </Menu.Item>
           <Menu.Item key="2">
-            <Link to={COUNTER} data-tid="counter-link">
+            <Link to={COUNTER} data-tid="nav-counter">
               <Icon type="desktop" />
               <span>Counter</span>
             </Link>
