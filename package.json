@@ -98,26 +98,6 @@
     "wait-on": "^3.3.0",
     "webpack": "4.29.6"
   },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --ext .ts,.tsx --fix",
-      "prettier --single-quote --write",
-      "git add"
-    ],
-    "{.{babelrc,eslintrc,prettierrc,stylelintrc}}": [
-      "prettier --parser json --write",
-      "git add"
-    ],
-    "*.less": [
-      "stylelint --syntax scss --fix",
-      "prettier --single-quote --write",
-      "git add"
-    ],
-    "*.{yml,md}": [
-      "prettier --single-quote --write",
-      "git add"
-    ]
-  },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
