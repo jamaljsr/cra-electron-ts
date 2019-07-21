@@ -1,24 +1,33 @@
 {
   "name": "cra-electron-ts",
   "version": "0.1.0",
-  "private": true,
-  "main": "public/electron.js",
+  "homepage": "https://your-website.com",
+  "description": "CRA Electron Typescript App",
+  "author": {
+    "name": "CRA Electron TS App",
+    "email": "your.email@domain.com",
+    "url": "https://your-website.com"
+  },
+  "main": "public/main.js",
   "scripts": {
-    "build": "rescripts build",
+    "build": "cross-env PUBLIC_URL=./ rescripts build",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-build": "electron-builder build -c.extraMetadata.main=build/main.js --config .electronbuildrc --publish onTagOrDraft",
     "eject": "rescripts eject",
     "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore .",
     "lint-all": "yarn tsc && yarn lint && yarn lint-styles",
     "lint-fix": "yarn lint --fix",
     "lint-styles": "stylelint **/*.*less",
     "lint-styles-fix": "stylelint **/*.*less --fix",
-    "package": "yarn build && electron-builder build --publish never",
-    "package-all": "yarn build && electron-builder build -mwl",
-    "package-ci": "yarn postinstall && yarn build && electron-builder --publish onTagOrDraft",
-    "package-linux": "yarn build && electron-builder build --linux",
-    "package-win": "yarn build && electron-builder build --win --x64",
+    "package": "yarn build && yarn electron-build",
+    "package-all": "yarn build && yarn electron-build -mwl",
+    "package-ci": "yarn postinstall && yarn build && yarn electron-build",
+    "package-linux": "yarn build && yarn electron-build --linux",
+    "package-win": "yarn build && yarn electron-build --win --x64",
     "postinstall": "electron-builder install-app-deps",
+    "prestart": "tsc -p electron/tsconfig.json",
+    "prebuild": "tsc -p electron/tsconfig.json",
     "release": "yarn test && yarn package",
     "start": "rescripts start",
     "test": "rescripts test --coverage",
@@ -32,6 +41,7 @@
     "antd": "^3.20.5",
     "connected-react-router": "^6.5.2",
     "easy-peasy": "3.0.0-rc.5",
+    "electron-debug": "^3.0.1",
     "electron-is-dev": "^1.1.0",
     "history": "^4.9.0",
     "react": "^16.8.6",
@@ -42,13 +52,14 @@
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "redux": "^4.0.4",
     "typescript": "3.5.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
     "@rescripts/cli": "^0.0.11",
-    "@rescripts/rescript-env": "^0.0.10",
+    "@rescripts/rescript-use-babel-config": "^0.0.8",
     "@testing-library/jest-dom": "^4.0.0",
     "@testing-library/react": "^8.0.5",
     "@types/jest": "24.0.15",
@@ -67,6 +78,8 @@
     "cross-env": "^5.2.0",
     "electron": "^5.0.7",
     "electron-builder": "^21.1.1",
+    "electron-devtools-installer": "^2.2.4",
+    "eslint": "5.16.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
@@ -82,27 +95,8 @@
     "testcafe": "^1.3.3",
     "testcafe-browser-provider-electron": "^0.0.10",
     "testcafe-react-selectors": "^3.1.0",
-    "wait-on": "^3.3.0"
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --ext .ts,.tsx --fix",
-      "prettier --single-quote --write",
-      "git add"
-    ],
-    "{.{babelrc,eslintrc,prettierrc,stylelintrc}}": [
-      "prettier --parser json --write",
-      "git add"
-    ],
-    "*.less": [
-      "stylelint --syntax scss --fix",
-      "prettier --single-quote --write",
-      "git add"
-    ],
-    "*.{yml,md}": [
-      "prettier --single-quote --write",
-      "git add"
-    ]
+    "wait-on": "^3.3.0",
+    "webpack": "4.29.6"
   },
   "husky": {
     "hooks": {
@@ -119,28 +113,6 @@
       "!<rootDir>/src/store/index.ts",
       "!<rootDir>/src/theme/index.js"
     ]
-  },
-  "homepage": "./",
-  "author": {
-    "name": "CRA Electron TS App",
-    "email": "your.email@domain.com",
-    "url": "https://your-website.com"
-  },
-  "description": "CRA Electron Typescript App",
-  "build": {
-    "appId": "com.my-website.cra-electron-ts",
-    "productName": "CRA Electron Typescript App",
-    "copyright": "Copyright © 2019 ${author}",
-    "mac": {
-      "category": "public.app-category.utilities"
-    },
-    "files": [
-      "build/**/*",
-      "node_modules/**/*"
-    ],
-    "directories": {
-      "buildResources": "assets"
-    }
   },
   "eslintConfig": {
     "extends": "react-app"

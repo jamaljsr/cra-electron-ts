@@ -73,6 +73,10 @@ typings/
 /build
 /dist
 
+# compiled by tsc from /src/electron/
+/public/main.js
+/public/main.js.map
+
 # misc
 .DS_Store
 .env.local

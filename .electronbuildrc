@@ -1,0 +1,55 @@
+{
+  "appId": "com.my-website.cra-electron-ts",
+  "productName": "CRA Electron Typescript App",
+  "copyright": "Copyright © 2019 ${author}",
+  "artifactName": "${productName}-${os}-${arch}-v${version}.${ext}",
+  "files": ["build/**/*", "node_modules/**/*"],
+  "directories": {
+    "buildResources": "assets"
+  },
+  "mac": {
+    "category": "public.app-category.utilities",
+    "target": ["dmg", "zip"]
+  },
+  "dmg": {
+    "contents": [
+      {
+        "x": 130,
+        "y": 220
+      },
+      {
+        "x": 410,
+        "y": 220,
+        "type": "link",
+        "path": "/Applications"
+      }
+    ]
+  },
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64", "ia32"]
+      }
+    ]
+  },
+  "linux": {
+    "target": [
+      {
+        "target": "deb",
+        "arch": ["x64", "ia32"]
+      },
+      {
+        "target": "AppImage",
+        "arch": ["x64", "ia32"]
+      }
+    ],
+    "category": "Development"
+  },
+  "publish": {
+    "provider": "github",
+    "owner": "jamaljsr",
+    "repo": "cra-electron-ts",
+    "private": false
+  }
+}
