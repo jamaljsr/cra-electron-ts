@@ -5739,10 +5739,10 @@ duplexify@^3.4.2, duplexify@^3.6.0:
     readable-stream "^2.0.0"
     stream-shift "^1.0.0"
 
-easy-peasy@3.0.0-rc.5:
-  version "3.0.0-rc.5"
-  resolved "https://registry.yarnpkg.com/easy-peasy/-/easy-peasy-3.0.0-rc.5.tgz#a98b13b7af6257876c75a74623925d5bd2330239"
-  integrity sha512-ziOSvtEheQcbI27yUSVHM/oup/Se0+WdvwCr2/3/uNhepb2rH3kvOpxgiy0J44sJXTUP6b/vWEbNCruC08WjrQ==
+easy-peasy@3.0.0-rc.6:
+  version "3.0.0-rc.6"
+  resolved "https://registry.yarnpkg.com/easy-peasy/-/easy-peasy-3.0.0-rc.6.tgz#ba47ec9f5a25ea68f58f87b165a465dcf87493ae"
+  integrity sha512-sz8BGZbr0LWlRAHNT20MMpXU7z1S41QrlnbIYbmxmgRSIfKGTm0wvFWNJLGWcYoqSBH6mW3LQDcGwTGwhGWHXA==
   dependencies:
     immer-peasy "3.1.3"
     memoizerific "^1.11.3"
