@@ -1,12 +1,13 @@
 {
   "files.associations": {
     ".commitlintrc": "jsonc",
-    ".eslintrc": "jsonc",
     ".electronbuildrc": "jsonc",
+    ".eslintrc": "jsonc",
     ".lintstagedrc": "jsonc",
     ".prettierrc": "jsonc",
     ".renovaterc": "jsonc",
-    ".stylelintrc": "json"
+    ".stylelintrc": "json",
+    ".versionrc": "json"
   },
   "eslint.autoFixOnSave": true,
   "eslint.validate": [
