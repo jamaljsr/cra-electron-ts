@@ -11,6 +11,7 @@
   "main": "public/main.js",
   "scripts": {
     "build": "cross-env PUBLIC_URL=./ rescripts build",
+    "cz": "git add . && git cz",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "electron-build": "electron-builder build -c.extraMetadata.main=build/main.js --config .electronbuildrc --publish onTagOrDraft",
@@ -102,7 +103,6 @@
   },
   "husky": {
     "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged"
     }
