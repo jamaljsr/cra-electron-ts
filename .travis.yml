@@ -52,12 +52,12 @@ install:
   - yarn --ignore-engines --frozen-lockfile --non-interactive --network-timeout 300000
 
 script:
-  - yarn package-ci
   - yarn lint
   - yarn lint-styles
   - yarn tsc
   # ignore snapshot tests on linux due to file incompatibility across different OS's
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then yarn test -u; fi
   - if [[ "$TRAVIS_OS_NAME" != "linux" ]]; then yarn test; fi
-  - yarn coveralls
   - yarn test-e2e
+  - yarn coveralls
+  - if [[ "$TRAVIS_BRANCH" != "master" ]]; then yarn package-ci; fi

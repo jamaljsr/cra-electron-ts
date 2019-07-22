@@ -35,10 +35,12 @@ install:
   - yarn
 
 test_script:
-  - yarn package-ci
   - yarn lint
   - yarn lint-styles
   - yarn tsc
   - yarn test
-  - yarn coveralls
   - yarn test-e2e
+  - yarn coveralls
+
+deploy_script:
+  - cmd: powershell if ($env:appveyor_repo_branch -eq 'master') { yarn package-ci }
