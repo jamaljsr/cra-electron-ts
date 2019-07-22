@@ -39,11 +39,26 @@ test('should change when count is odd and odd button clicked', async t => {
     .eql('3');
 });
 
-test('should change if async button clicked and a second later', async t => {
+test('should change a second later if async button clicked', async t => {
   await t
     .click(Counter.incrementAsync)
     .expect(Counter.loadingIcon)
     .ok()
     .expect(Counter.getCounterText())
     .eql('1');
+});
+
+test('should show error if count is 3 and async button clicked', async t => {
+  await t
+    .click(Counter.increment) // increment to 1
+    .click(Counter.incrementOdd) // increment to 3
+    .click(Counter.incrementAsync)
+    .expect(Counter.loadingIcon.exists)
+    .ok()
+    .expect(Counter.getCounterText())
+    .eql('3')
+    .expect(Counter.error.exists)
+    .ok()
+    .expect(Counter.getErrorText())
+    .eql('bwahh!!');
 });
