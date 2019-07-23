@@ -39,30 +39,14 @@ const AppLayout: React.FC<Props> = (props: Props) => {
             title={
               <span>
                 <Icon type="user" />
-                <span>User</span>
+                <span>Menu</span>
               </span>
             }
           >
-            <Menu.Item key="3">Tom</Menu.Item>
-            <Menu.Item key="4">Bill</Menu.Item>
-            <Menu.Item key="5">Alex</Menu.Item>
+            <Menu.Item key="3">Item 1</Menu.Item>
+            <Menu.Item key="4">Item 2</Menu.Item>
+            <Menu.Item key="5">Item 3</Menu.Item>
           </SubMenu>
-          <SubMenu
-            key="sub2"
-            title={
-              <span>
-                <Icon type="team" />
-                <span>Team</span>
-              </span>
-            }
-          >
-            <Menu.Item key="6">Team 1</Menu.Item>
-            <Menu.Item key="8">Team 2</Menu.Item>
-          </SubMenu>
-          <Menu.Item key="9">
-            <Icon type="file" />
-            <span>File</span>
-          </Menu.Item>
         </Menu>
       </Sider>
       <Layout>
@@ -76,8 +60,8 @@ const AppLayout: React.FC<Props> = (props: Props) => {
         </Header>
         <Content className={styles.content}>
           <Breadcrumb className={styles.breadcrumb}>
-            <Breadcrumb.Item>User</Breadcrumb.Item>
-            <Breadcrumb.Item>Bill</Breadcrumb.Item>
+            <Breadcrumb.Item>Home</Breadcrumb.Item>
+            <Breadcrumb.Item>Counter</Breadcrumb.Item>
           </Breadcrumb>
           <div className={styles.container}>{props.children}</div>
         </Content>
