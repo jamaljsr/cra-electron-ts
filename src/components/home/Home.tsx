@@ -5,10 +5,7 @@ import { COUNTER } from '../Routes';
 
 const Home = () => {
   const [showAlert, setShowAlert] = useState(false);
-
-  const handleClickMe = () => {
-    setShowAlert(true);
-  };
+  const handleClickMe = () => setShowAlert(true);
 
   return (
     <div>
