@@ -11,7 +11,7 @@
   "main": "public/main.js",
   "scripts": {
     "build": "cross-env PUBLIC_URL=./ rescripts build",
-    "cz": "git add . && git cz && git push",
+    "cm": "git add . && git cz && git push",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "eject": "rescripts eject",

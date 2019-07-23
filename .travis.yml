@@ -60,4 +60,4 @@ script:
   - if [[ "$TRAVIS_OS_NAME" != "linux" ]]; then yarn test; fi
   - yarn test-e2e
   - yarn coveralls
-  - if [[ "$TRAVIS_BRANCH" == "master" ]]; then yarn package-ci; fi
+  - if [[ "$TRAVIS_BRANCH" == "master" and "$TRAVIS_PULL_REQUEST" == "false" ]]; then yarn package-ci; fi
