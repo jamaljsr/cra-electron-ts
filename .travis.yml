@@ -59,5 +59,5 @@ script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then yarn test -u; fi
   - if [[ "$TRAVIS_OS_NAME" != "linux" ]]; then yarn test; fi
   - yarn test-e2e
-  - yarn coveralls
+  - yarn test-codecov
   - if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then yarn package-ci; fi
