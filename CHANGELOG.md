@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/jamaljsr/cra-electron-ts/compare/v0.1.0...v0.1.1) (2019-07-23)
+
+
+### Bug Fixes
+
+* **deps:** update dependency easy-peasy to v3.0.0-rc.6 ([3f82d17](https://github.com/jamaljsr/cra-electron-ts/commit/3f82d17))
+
+
+### Performance
+
+* **electron:** decrease app installer package size by up to 50% ([69ae46e](https://github.com/jamaljsr/cra-electron-ts/commit/69ae46e))
+
+
+
 ## 0.1.0 (2019-07-21)
 
 ### Bug Fixes

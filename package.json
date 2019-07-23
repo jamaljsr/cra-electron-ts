@@ -1,6 +1,6 @@
 {
   "name": "cra-electron-ts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://your-website.com",
   "description": "CRA Electron Typescript App",
   "author": {
@@ -26,13 +26,13 @@
     "postinstall": "electron-builder install-app-deps",
     "prestart": "tsc -p electron/tsconfig.json",
     "prebuild": "tsc -p electron/tsconfig.json",
+    "release": "standard-version --no-verify",
     "start": "rescripts start",
     "test": "rescripts test --coverage",
     "test-all": "cross-env CI=true yarn test && yarn test-e2e",
     "test-e2e": "yarn build && cross-env NODE_ENV=production testcafe electron:./ ./e2e/**/*.e2e.ts",
     "test-e2e-live": "yarn test-e2e -L",
-    "tsc": "tsc --noEmit",
-    "version": "standard-version --no-verify"
+    "tsc": "tsc --noEmit"
   },
   "dependencies": {
     "electron-debug": "^3.0.1",
