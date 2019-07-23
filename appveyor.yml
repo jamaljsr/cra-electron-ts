@@ -41,7 +41,6 @@ test_script:
   - yarn test
   - yarn test-e2e
   - yarn test-codecov
-  # - yarn coveralls
 
 deploy_script:
   - cmd: powershell if ($env:appveyor_repo_branch -eq 'master') { yarn package-ci }

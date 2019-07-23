@@ -11,8 +11,7 @@
   "main": "public/main.js",
   "scripts": {
     "build": "cross-env PUBLIC_URL=./ rescripts build",
-    "cm": "git add . && git cz && git push",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "cm": "git add . && git cz",
     "dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "eject": "rescripts eject",
     "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore .",
@@ -63,7 +62,6 @@
     "commitizen": "^4.0.3",
     "concurrently": "^4.1.1",
     "connected-react-router": "^6.5.2",
-    "coveralls": "^3.0.5",
     "cross-env": "^5.2.0",
     "easy-peasy": "3.0.0",
     "electron": "^5.0.7",
