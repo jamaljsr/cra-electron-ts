@@ -1,6 +1,6 @@
 {
   "appId": "com.my-website.cra-electron-ts",
-  "productName": "CRA Electron Typescript App",
+  "productName": "ElectronApp",
   "copyright": "Copyright © 2019 ${author}",
   "artifactName": "electron-app-${os}-${arch}-v${version}.${ext}",
   "files": ["build/**/*", "node_modules/**/*"],
