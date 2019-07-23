@@ -26,13 +26,13 @@
     "postinstall": "electron-builder install-app-deps",
     "prestart": "tsc -p electron/tsconfig.json",
     "prebuild": "tsc -p electron/tsconfig.json",
-    "release": "standard-version --no-verify",
     "start": "rescripts start",
     "test": "rescripts test --coverage",
     "test-all": "cross-env CI=true yarn test && yarn test-e2e",
     "test-e2e": "yarn build && cross-env NODE_ENV=production testcafe electron:./ ./e2e/**/*.e2e.ts",
     "test-e2e-live": "yarn test-e2e -L",
-    "tsc": "tsc --noEmit"
+    "tsc": "tsc --noEmit",
+    "version": "standard-version --no-verify"
   },
   "dependencies": {
     "@hot-loader/react-dom": "^16.8.6",
