@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Card, Button, Alert } from 'antd';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { COUNTER } from '../Routes';
 
 const Home = () => {
+  const { t } = useTranslation();
+
   const [showAlert, setShowAlert] = useState(false);
   const handleClickMe = () => setShowAlert(true);
 
@@ -12,7 +15,7 @@ const Home = () => {
       {showAlert && (
         <Alert message="Success Tips" type="success" showIcon data-tid="success" />
       )}
-      <Card title="Welcome to React App">
+      <Card title={t('components.home.Home.cardTitle')}>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
           incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -30,7 +33,7 @@ const Home = () => {
         </p>
         <p>
           <Button type="primary" data-tid="me-btn" onClick={handleClickMe}>
-            Click Me!
+            {t('components.home.Home.meBtnText')}
           </Button>
         </p>
       </Card>
