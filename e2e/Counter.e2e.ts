@@ -60,5 +60,5 @@ test('should show error if count is 3 and async button clicked', async t => {
     .expect(Counter.error.exists)
     .ok()
     .expect(Counter.getErrorText())
-    .eql('bwahh!!');
+    .eql('Increment Async prohibited when count is 3.');
 });

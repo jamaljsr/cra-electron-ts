@@ -13,5 +13,6 @@
   "cmps.counter.increment": "Incremento",
   "cmps.counter.decrement": "Decremento",
   "cmps.counter.increment-odd": "Incremento impar",
-  "cmps.counter.increment-async": "Incremento asincrónico"
+  "cmps.counter.increment-async": "Incremento asincrónico",
+  "models.counter.increment-async.error": "Incremento de asíncrono prohibido cuando el conteo es 3."
 }
