@@ -1,11 +1,11 @@
-import * as React from 'react';
+import React from 'react';
 import { StoreProvider } from 'easy-peasy';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import '@testing-library/react/cleanup-after-each';
-import { createReduxStore } from '../store';
+import { createReduxStore } from 'store';
 import Routes, { HOME, COUNTER } from './Routes';
 
 describe('App container', () => {

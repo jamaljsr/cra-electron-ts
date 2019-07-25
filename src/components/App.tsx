@@ -3,7 +3,7 @@ import { hot } from 'react-hot-loader/root';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import { StoreProvider } from 'easy-peasy';
-import store, { history } from '../store';
+import store, { history } from 'store';
 import Routes from './Routes';
 
 const App: React.FC = () => {

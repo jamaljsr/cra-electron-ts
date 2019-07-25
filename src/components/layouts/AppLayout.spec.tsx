@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { StoreProvider } from 'easy-peasy';
 import { ConnectedRouter } from 'connected-react-router';
 import { Provider } from 'react-redux';
 import { createMemoryHistory, MemoryHistory } from 'history';
-import { createReduxStore } from '../../store';
+import { createReduxStore } from 'store';
 import AppLayout from './AppLayout';
 
 describe('AppLayout component', () => {

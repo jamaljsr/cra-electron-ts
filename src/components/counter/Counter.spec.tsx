@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {
   render,
   fireEvent,
@@ -10,7 +10,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import { Provider } from 'react-redux';
 import { createMemoryHistory } from 'history';
 
-import { createReduxStore } from '../../store';
+import { createReduxStore } from 'store';
 import Counter from './Counter';
 
 describe('Counter component', () => {
