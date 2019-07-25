@@ -21,7 +21,7 @@ module.exports = {
     defaultLng: 'en-US',
     ns: ['translation'],
     defaultNs: 'translation',
-    defaultValue: '',
+    defaultValue: '__MISSING__TRANSLATION__',
     resource: {
       loadPath: 'src/i18n/locales/{{lng}}.json',
       savePath: 'src/i18n/locales/{{lng}}.json',

@@ -2,9 +2,11 @@ import * as React from 'react';
 import { Alert, Button, Icon } from 'antd';
 import { useStoreState, useStoreActions } from '../../store';
 import { useAsyncCallback } from 'react-async-hook';
+import { useTranslation } from 'react-i18next';
 import styles from './Counter.module.less';
 
 const Counter = () => {
+  const { t } = useTranslation();
   const { count } = useStoreState(s => s.counter);
   const { increment, decrement, incrementIfOdd, incrementAsync } = useStoreActions(
     a => a.counter,
@@ -32,7 +34,7 @@ const Counter = () => {
           data-tid="incr-btn"
           onClick={incrementCb}
         >
-          Increment
+          {t('cmps.counter.increment', 'Increment')}
         </Button>
         <Button
           type="primary"
@@ -41,7 +43,7 @@ const Counter = () => {
           data-tid="decr-btn"
           onClick={decrementCb}
         >
-          Decrement
+          {t('cmps.counter.decrement', 'Decrement')}
         </Button>
         <Button
           type="primary"
@@ -50,7 +52,7 @@ const Counter = () => {
           data-tid="odd-btn"
           onClick={incrementIfOddCb}
         >
-          Increment Odd
+          {t('cmps.counter.increment-odd', 'Increment Odd')}
         </Button>
         <Button
           type="primary"
@@ -60,7 +62,7 @@ const Counter = () => {
           onClick={incrementAsyncCb}
           loading={loading}
         >
-          Increment Async
+          {t('cmps.counter.increment-async', 'Increment Async')}
         </Button>
       </div>
     </div>

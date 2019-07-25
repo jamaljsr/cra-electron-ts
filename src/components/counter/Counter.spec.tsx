@@ -84,7 +84,7 @@ describe('Counter component', () => {
     await waitForElement(() => getByTestId('async-loader'));
     await waitForElementToBeRemoved(() => getByTestId('async-loader'));
 
-    expect(btn).toHaveTextContent('Increment Async');
+    expect(btn).toHaveTextContent('cmps.counter.increment-async');
     expect(getByTestId('counter')).toHaveTextContent('1');
   });
 
@@ -104,7 +104,7 @@ describe('Counter component', () => {
     await waitForElement(() => getByTestId('async-loader'));
     await waitForElementToBeRemoved(() => getByTestId('async-loader'));
 
-    expect(btn).toHaveTextContent('Increment Async');
+    expect(btn).toHaveTextContent('cmps.counter.increment-async');
     expect(getByTestId('error')).toHaveTextContent('bwahh!!');
   });
 });
