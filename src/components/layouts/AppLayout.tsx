@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { HOME, COUNTER } from '../Routes';
 import styles from './AppLayout.module.less';
+import logo from '../../resources/logo.png';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -13,16 +14,21 @@ interface Props {
 }
 
 const AppLayout: React.FC<Props> = (props: Props) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [collapsed, setCollapsed] = useState(false);
   const toggle = () => setCollapsed(!collapsed);
+  const setEnglish = () => i18n.changeLanguage('en-US');
+  const setSpanish = () => i18n.changeLanguage('es');
 
   return (
     <Layout className={styles.layout}>
       <Sider collapsible collapsed={collapsed} trigger={null} data-tid="sider">
-        <Link to={HOME} data-tid="logo">
-          <div className={styles.logo} />
-        </Link>
+        <div className={styles.logo}>
+          <Link to={HOME} data-tid="logo">
+            <img src={logo} alt="logo" />
+            {!collapsed && <span>Electron App</span>}
+          </Link>
+        </div>
         <Menu theme="dark" mode="inline" selectable={false}>
           <Menu.Item key="1">
             <Link to={HOME} data-tid="nav-home">
@@ -46,8 +52,8 @@ const AppLayout: React.FC<Props> = (props: Props) => {
             }
           >
             <Menu.Item key="3">{t('cmps.app-layout.item1', 'Item 1')}</Menu.Item>
-            <Menu.Item key="3">{t('cmps.app-layout.item2', 'Item 2')}</Menu.Item>
-            <Menu.Item key="3">{t('cmps.app-layout.item3', 'Item 3')}</Menu.Item>
+            <Menu.Item key="4">{t('cmps.app-layout.item2', 'Item 2')}</Menu.Item>
+            <Menu.Item key="5">{t('cmps.app-layout.item3', 'Item 3')}</Menu.Item>
           </SubMenu>
         </Menu>
       </Sider>
@@ -67,7 +73,16 @@ const AppLayout: React.FC<Props> = (props: Props) => {
           </Breadcrumb>
           <div className={styles.container}>{props.children}</div>
         </Content>
-        <Footer className={styles.footer}>React App &copy; 2019 Fomo Bros</Footer>
+        <Footer className={styles.footer}>
+          React App &copy; 2019 Fomo Bros{' '}
+          <a href="/#" onClick={setEnglish}>
+            EN
+          </a>{' '}
+          |{' '}
+          <a href="/#" onClick={setSpanish}>
+            ES
+          </a>
+        </Footer>
       </Layout>
     </Layout>
   );
