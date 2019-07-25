@@ -26,7 +26,7 @@ describe('App container', () => {
 
   it('should render the home page', () => {
     const { getByTestId } = renderComponent(HOME);
-    expect(getByTestId('me-btn')).toHaveTextContent('Click Me!');
+    expect(getByTestId('me-btn')).toHaveTextContent('home.me-btn');
   });
 
   it('should render the counter page', () => {

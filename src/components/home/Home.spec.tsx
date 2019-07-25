@@ -25,7 +25,7 @@ describe('Home component', () => {
 
   it('should contain a "Click Me!" button', () => {
     const { getByTestId } = renderComponent();
-    expect(getByTestId('me-btn')).toHaveTextContent('Click Me!');
+    expect(getByTestId('me-btn')).toHaveTextContent('home.me-btn');
   });
 
   it('should contain a link to Counter page', () => {
