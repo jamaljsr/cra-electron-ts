@@ -15,15 +15,8 @@ const Home = () => {
       {showAlert && (
         <Alert message="Success Tips" type="success" showIcon data-tid="success" />
       )}
-      <Card title={t('components.home.Home.cardTitle')}>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+      <Card title={t('home.card-title')}>
+        <p>{t('home.card-description')}</p>
         <p>
           Play with the{' '}
           <Link to={COUNTER} data-tid="counter-link">
@@ -33,7 +26,7 @@ const Home = () => {
         </p>
         <p>
           <Button type="primary" data-tid="me-btn" onClick={handleClickMe}>
-            {t('components.home.Home.meBtnText')}
+            {t('home.me-btn')}
           </Button>
         </p>
       </Card>
