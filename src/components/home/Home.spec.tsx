@@ -25,7 +25,7 @@ describe('Home component', () => {
 
   it('should contain a "Click Me!" button', () => {
     const { getByTestId } = renderComponent();
-    expect(getByTestId('me-btn')).toHaveTextContent('Click Me!');
+    expect(getByTestId('me-btn')).toHaveTextContent('cmps.home.me-btn');
   });
 
   it('should contain a link to Counter page', () => {
@@ -42,6 +42,6 @@ describe('Home component', () => {
     const { getByTestId } = renderComponent();
     const btn = getByTestId('me-btn');
     fireEvent.click(btn);
-    expect(getByTestId('success')).toHaveTextContent('Success Tips');
+    expect(getByTestId('success')).toHaveTextContent('cmps.home.success-text');
   });
 });

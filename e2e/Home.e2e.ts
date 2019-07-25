@@ -1,10 +1,10 @@
 import { Home } from './pages';
-import { getPageUrl, getPageTitle, assertNoConsoleErrors, pageUrl } from './helpers';
+import { getPageUrl, assertNoConsoleErrors, pageUrl } from './helpers';
 
 fixture`Home`.page(pageUrl).afterEach(assertNoConsoleErrors);
 
-test('should open window', async t => {
-  await t.expect(getPageTitle()).eql('React App');
+test('should be on the route /', async t => {
+  await t.expect(getPageUrl()).match(/.*#\/$/);
 });
 
 test('should show success alert when "Click Me" button clicked', async t => {

@@ -48,7 +48,7 @@ describe('counter model', () => {
       store = createStore(counterModel, { initialState: { count: 3 } });
       await store.getActions().incrementAsync();
     } catch (e) {
-      expect(e.message).toMatch('bwahh!!');
+      expect(e.message).toMatch('models.counter.increment-async.error');
     }
   });
 });

@@ -1,4 +1,5 @@
 import { Action, action, Thunk, thunk } from 'easy-peasy';
+import i18n from 'i18next';
 
 export interface CounterModel {
   count: number;
@@ -30,7 +31,7 @@ const counterModel: CounterModel = {
           actions.increment();
           resolve();
         } else {
-          reject(new Error('bwahh!!'));
+          reject(new Error(i18n.t('models.counter.increment-async.error')));
         }
       }, payload || 1000);
     });

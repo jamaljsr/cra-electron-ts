@@ -84,14 +84,14 @@ describe('Counter component', () => {
     await waitForElement(() => getByTestId('async-loader'));
     await waitForElementToBeRemoved(() => getByTestId('async-loader'));
 
-    expect(btn).toHaveTextContent('Increment Async');
+    expect(btn).toHaveTextContent('cmps.counter.increment-async');
     expect(getByTestId('counter')).toHaveTextContent('1');
   });
 
   it('should raise error when count is 3 and async btn is clicked', async () => {
     const { getByTestId } = renderComponent();
 
-    // first increment to 1 so that the current count is odd
+    // first increment to 3
     const incr = getByTestId('incr-btn');
     fireEvent.click(incr);
     fireEvent.click(incr);
@@ -104,7 +104,9 @@ describe('Counter component', () => {
     await waitForElement(() => getByTestId('async-loader'));
     await waitForElementToBeRemoved(() => getByTestId('async-loader'));
 
-    expect(btn).toHaveTextContent('Increment Async');
-    expect(getByTestId('error')).toHaveTextContent('bwahh!!');
+    expect(btn).toHaveTextContent('cmps.counter.increment-async');
+    expect(getByTestId('error')).toHaveTextContent(
+      'models.counter.increment-async.error',
+    );
   });
 });
