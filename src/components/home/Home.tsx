@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, Button, Alert } from 'antd';
 import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import { COUNTER } from '../Routes';
 
 const Home = () => {
@@ -13,20 +13,27 @@ const Home = () => {
   return (
     <div>
       {showAlert && (
-        <Alert message="Success Tips" type="success" showIcon data-tid="success" />
+        <Alert
+          message={t('cmps.home.success-text')}
+          type="success"
+          showIcon
+          data-tid="success"
+        />
       )}
-      <Card title={t('home.card-title')}>
-        <p>{t('home.card-description')}</p>
+      <Card title={t('cmps.home.card-title')}>
+        <p>{t('cmps.home.card-description')}</p>
         <p>
-          Play with the{' '}
-          <Link to={COUNTER} data-tid="counter-link">
-            Counter
-          </Link>{' '}
-          thing
+          <Trans i18nKey="cmps.home.play">
+            Play with the{' '}
+            <Link to={COUNTER} data-tid="counter-link">
+              Counter
+            </Link>{' '}
+            thing
+          </Trans>
         </p>
         <p>
           <Button type="primary" data-tid="me-btn" onClick={handleClickMe}>
-            {t('home.me-btn')}
+            {t('cmps.home.me-btn')}
           </Button>
         </p>
       </Card>
