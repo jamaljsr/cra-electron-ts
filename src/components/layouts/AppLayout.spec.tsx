@@ -3,13 +3,15 @@ import { render, fireEvent } from '@testing-library/react';
 import { StoreProvider } from 'easy-peasy';
 import { ConnectedRouter } from 'connected-react-router';
 import { Provider } from 'react-redux';
-import { createMemoryHistory } from 'history';
+import { createMemoryHistory, MemoryHistory } from 'history';
 import { createReduxStore } from '../../store';
 import AppLayout from './AppLayout';
 
 describe('AppLayout component', () => {
-  const history = createMemoryHistory();
-  const renderComponent = () => {
+  let history: MemoryHistory;
+  const renderComponent = (path?: string) => {
+    history = createMemoryHistory();
+    if (path) history.push(path);
     const store = createReduxStore();
     const app = (
       <StoreProvider store={store}>
@@ -54,12 +56,9 @@ describe('AppLayout component', () => {
   });
 
   it('should navigate to home page when logo clicked', () => {
-    const { getByTestId } = renderComponent();
-    // first go to counter page
-    fireEvent.click(getByTestId('nav-counter'));
+    const { getByTestId } = renderComponent('/counter');
     // then click the logo
     fireEvent.click(getByTestId('logo'));
-
     expect(history.location.pathname).toEqual('/');
   });
 });
