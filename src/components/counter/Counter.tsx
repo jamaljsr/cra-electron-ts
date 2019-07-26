@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 import { Alert, Button, Icon } from 'antd';
-import { useStoreState, useStoreActions } from '../../store';
+import { useStoreState, useStoreActions } from 'store';
 import { useAsyncCallback } from 'react-async-hook';
 import { useTranslation } from 'react-i18next';
 import styles from './Counter.module.less';

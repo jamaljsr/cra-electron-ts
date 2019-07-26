@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { HOME, COUNTER } from '../Routes';
+import { HOME, COUNTER } from 'components/Routes';
+import logo from 'resources/logo.png';
 import styles from './AppLayout.module.less';
-import logo from '../../resources/logo.png';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;

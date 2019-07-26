@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, Button, Alert } from 'antd';
 import { Link } from 'react-router-dom';
 import { useTranslation, Trans } from 'react-i18next';
-import { COUNTER } from '../Routes';
+import { COUNTER } from 'components/Routes';
 
 const Home = () => {
   const { t } = useTranslation();
