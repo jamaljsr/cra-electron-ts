@@ -101,7 +101,7 @@
     "testcafe-react-selectors": "^3.1.0",
     "typescript": "3.5.3",
     "wait-on": "^3.3.0",
-    "webpack": "4.29.6"
+    "webpack": "4.38.0"
   },
   "husky": {
     "hooks": {
