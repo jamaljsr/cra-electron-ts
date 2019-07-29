@@ -2,8 +2,10 @@ import path from 'path';
 import { app, BrowserWindow } from 'electron';
 import debug from 'electron-debug';
 import isNotPackaged from 'electron-is-dev';
+import { warn } from 'electron-log';
 
 const isDev = isNotPackaged && process.env.NODE_ENV !== 'production';
+warn(`Starting Electron main process`);
 
 let mainWindow: BrowserWindow | null;
 

@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, Button, Alert } from 'antd';
 import { Link } from 'react-router-dom';
 import { useTranslation, Trans } from 'react-i18next';
 import { COUNTER } from 'components/Routes';
+import { info } from 'electron-log';
 
 const Home = () => {
+  useEffect(() => info('Rendering Home component'), []);
   const { t } = useTranslation();
 
   const [showAlert, setShowAlert] = useState(false);
