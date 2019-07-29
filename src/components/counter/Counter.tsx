@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Alert, Button, Icon } from 'antd';
 import { useStoreState, useStoreActions } from 'store';
 import { useAsyncCallback } from 'react-async-hook';
 import { useTranslation } from 'react-i18next';
 import styles from './Counter.module.less';
+import { info } from 'electron-log';
 
 const Counter = () => {
+  useEffect(() => info('Rendering Counter component'), []);
   const { t } = useTranslation();
   const { count } = useStoreState(s => s.counter);
   const { increment, decrement, incrementIfOdd, incrementAsync } = useStoreActions(
