@@ -36,11 +36,11 @@ install:
 
 test_script:
   - yarn lint
-  - yarn lint-styles
+  - yarn lint:styles
   - yarn tsc
   - yarn test
-  - yarn test-e2e
-  - yarn test-codecov
+  - yarn test:e2e
+  - yarn test:codecov
 
 deploy_script:
-  - cmd: powershell if ($env:appveyor_repo_branch -eq 'master') { yarn package-ci }
+  - cmd: powershell if ($env:appveyor_repo_branch -eq 'master') { yarn package:ci }
