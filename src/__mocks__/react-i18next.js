@@ -32,9 +32,17 @@ const renderNodes = reactNodes => {
   });
 };
 
-const useMock = [k => k, {}];
-useMock.t = k => k;
-useMock.i18n = {};
+// wrap changeLanguage() in a jest mock to track invocations
+const i18n = {
+  changeLanguage: jest.fn(l => l),
+};
+// t() should just return the language key
+const t = k => k;
+
+// mock for the useTranslation hook
+const useMock = [t, i18n];
+useMock.t = t;
+useMock.i18n = i18n;
 
 module.exports = {
   // this mock makes sure any components using the translate HoC receive the t function as a prop

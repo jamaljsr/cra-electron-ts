@@ -75,11 +75,11 @@ const AppLayout: React.FC<Props> = (props: Props) => {
         </Content>
         <Footer className={styles.footer}>
           React App &copy; 2019 Fomo Bros{' '}
-          <a href="/#" onClick={setEnglish}>
+          <a href="/#" data-tid="english" onClick={setEnglish}>
             EN
           </a>{' '}
           |{' '}
-          <a href="/#" onClick={setSpanish}>
+          <a href="/#" data-tid="spanish" onClick={setSpanish}>
             ES
           </a>
         </Footer>
