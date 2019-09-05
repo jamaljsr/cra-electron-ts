@@ -39,5 +39,12 @@ jobs:
       run: yarn test
       env:
         CI: true
-    - name: e2e tests
+    - name: e2e tests (mac & windows)
+      if: matrix.os != 'ubuntu-latest'
       run: yarn test:e2e
+    - name: e2e tests (ubuntu)
+      if: matrix.os == 'ubuntu-latest'
+      uses: mujo-code/puppeteer-headful@12.3.1
+      with:
+        args: test:e2e
+     
