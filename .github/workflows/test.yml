@@ -42,8 +42,3 @@ jobs:
       - name: e2e tests (mac & windows)
         if: matrix.os != 'ubuntu-latest'
         run: yarn test:e2e
-      - name: e2e tests (ubuntu)
-        if: matrix.os == 'ubuntu-latest'
-        uses: ./.github/actions/testcafe
-        with:
-          args: test:e2e
