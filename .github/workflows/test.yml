@@ -18,13 +18,17 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node_version }}
-    - name: yarn install, build, and test
-      run: |
-        npm install -g yarn
-        yarn
-        yarn lint
-        yarn lint:styles
-        yarn tsc
-        yarn test:ci
+    - name: install yarn
+      run: npm install -g yarn
+    - name: install dependencies
+      run: yarn
+    - name: lint code
+      run: yarn lint
+    - name: lint styles
+      run: yarn lint:styles
+    - name: typescript compile
+      run: yarn tsc
+    - name: unit tests
+      run: yarn test:ci
       env:
         CI: true
