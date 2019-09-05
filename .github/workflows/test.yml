@@ -46,5 +46,5 @@ jobs:
       if: matrix.os == 'ubuntu-latest'
       uses: mujo-code/puppeteer-headful@12.3.1
       with:
-        args: test:e2e
+        args: "run test:e2e"
      
