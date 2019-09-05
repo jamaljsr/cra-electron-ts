@@ -31,8 +31,9 @@
     "test": "rescripts test --coverage",
     "test:all": "cross-env CI=true yarn test && yarn test:e2e",
     "test:codecov": "codecov",
-    "test:e2e": "yarn build && cross-env NODE_ENV=production testcafe electron:./ ./e2e/**/*.e2e.ts",
+    "test:e2e": "yarn build && yarn test:cafe",
     "test:e2e:live": "yarn test:e2e -L",
+    "test:cafe": "cross-env NODE_ENV=production testcafe electron:./ ./e2e/**/*.e2e.ts",
     "tsc": "tsc --noEmit"
   },
   "dependencies": {
