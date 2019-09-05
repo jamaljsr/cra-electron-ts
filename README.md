@@ -2,8 +2,7 @@
 
 > A production-ready starter template for ReactJS based cross-platform desktop apps.
 
-[![Build Status](https://travis-ci.org/jamaljsr/cra-electron-ts.svg?branch=master)](https://travis-ci.org/jamaljsr/cra-electron-ts)
-[![Build status](https://ci.appveyor.com/api/projects/status/ut7ckjybf6f5pv48/branch/master?svg=true)](https://ci.appveyor.com/project/jamaljsr/cra-electron-ts/branch/master)
+[![Actions Status](https://action-badges.now.sh/JasonEtco/action-badges?workflow=test-my-code)](https://github.com/jamaljsr/cra-electron-ts/actions)
 [![codecov](https://codecov.io/gh/jamaljsr/cra-electron-ts/branch/master/graph/badge.svg)](https://codecov.io/gh/jamaljsr/cra-electron-ts)
 
 ## The Stack
