@@ -2,7 +2,7 @@
 
 > A production-ready starter template for ReactJS based cross-platform desktop apps.
 
-[![Actions Status](https://action-badges.now.sh/JasonEtco/action-badges?workflow=test-my-code)](https://github.com/jamaljsr/cra-electron-ts/actions)
+[![Actions Status](https://action-badges.now.sh/jamaljsr/cra-electron-ts)](https://github.com/jamaljsr/cra-electron-ts/actions)
 [![codecov](https://codecov.io/gh/jamaljsr/cra-electron-ts/branch/master/graph/badge.svg)](https://codecov.io/gh/jamaljsr/cra-electron-ts)
 
 ## The Stack
