@@ -46,4 +46,4 @@ jobs:
         if: matrix.os == 'ubuntu-latest'
         uses: ./.github/actions/testcafe
         with:
-          args: 'yarn test:e2e'
+          args: test:e2e
