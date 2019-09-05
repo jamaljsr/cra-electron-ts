@@ -39,6 +39,10 @@ jobs:
         run: yarn test
         env:
           CI: true
+      - name: coverage
+        run: yarn test:codecov
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       - name: e2e tests (mac & windows)
         if: matrix.os != 'ubuntu-latest'
         run: yarn test:e2e
