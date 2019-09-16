@@ -42,8 +42,8 @@
     "electron-log": "^3.0.8"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.1.0",
-    "@commitlint/config-conventional": "^8.1.0",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "@hot-loader/react-dom": "^16.9.0",
     "@rescripts/cli": "^0.0.12",
     "@rescripts/rescript-use-babel-config": "^0.0.8",
