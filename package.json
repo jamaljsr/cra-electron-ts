@@ -59,7 +59,7 @@
     "@types/redux-logger": "^3.0.7",
     "@typescript-eslint/eslint-plugin": "2.3.0",
     "@typescript-eslint/parser": "2.3.0",
-    "antd": "^3.23.3",
+    "antd": "^3.23.4",
     "babel-plugin-import": "^1.12.1",
     "codecov": "^3.6.1",
     "commitizen": "^4.0.3",
