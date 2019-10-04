@@ -8268,10 +8268,10 @@ husky@^3.0.8:
     run-node "^1.0.0"
     slash "^3.0.0"
 
-i18next-browser-languagedetector@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/i18next-browser-languagedetector/-/i18next-browser-languagedetector-3.1.0.tgz#f28e7482ef22e67bf20cc189c86d55d7a7dfcacf"
-  integrity sha512-sIEI3NA+hB1dvhQi4QaDsYo0NaYFM7qgU30rNFCqU+jXvLaMiOhLy5p23/xq9usi/Fv+U2v4Q9wEYNYUIju25A==
+i18next-browser-languagedetector@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/i18next-browser-languagedetector/-/i18next-browser-languagedetector-3.1.1.tgz#1a0c236d4339476cc3632da60ff947bbc2e3ba3c"
+  integrity sha512-JBgFWijjI1t6as4WgGvDdX4GLJPZwC/SMHzLQQ3ef7XaJsEkomlXFqXifKvOVJg09Hj2BVWe6strDdIF4J/0ng==
 
 i18next-scanner@^2.10.3:
   version "2.10.3"
