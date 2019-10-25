@@ -47,7 +47,7 @@
     "@hot-loader/react-dom": "^16.10.2",
     "@rescripts/cli": "^0.0.13",
     "@rescripts/rescript-use-babel-config": "^0.0.9",
-    "@testing-library/jest-dom": "^4.1.2",
+    "@testing-library/jest-dom": "^4.2.0",
     "@testing-library/react": "^8.0.9",
     "@types/jest": "24.0.19",
     "@types/node": "12.11.7",
