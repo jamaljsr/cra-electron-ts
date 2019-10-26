@@ -8370,10 +8370,10 @@ i18next@*:
   dependencies:
     "@babel/runtime" "^7.3.1"
 
-i18next@^17.3.1:
-  version "17.3.1"
-  resolved "https://registry.yarnpkg.com/i18next/-/i18next-17.3.1.tgz#5fe75e054aae39a6f38f1a79f7ab49184c6dc7a1"
-  integrity sha512-4nY+yaENaoZKmpbiDXPzucVHCN3hN9Z9Zk7LyQXVOKVIpnYOJ3L/yxHJlBPtJDq3PGgjFwA0QBFm/26Z0iDT5A==
+i18next@^18.0.1:
+  version "18.0.1"
+  resolved "https://registry.yarnpkg.com/i18next/-/i18next-18.0.1.tgz#10841209f6983df4d8e367204da403d8cbc609cf"
+  integrity sha512-KWd9qMFXw0qjxF7cTAqQselPCYoHfaLvBs8c6JcNzaQKVxbAlE/wv9EZXPy+JlKUcXCT0qgjcmxrJjmbnEp60A==
   dependencies:
     "@babel/runtime" "^7.3.1"
 
