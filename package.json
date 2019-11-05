@@ -68,7 +68,7 @@
     "cross-env": "^6.0.3",
     "easy-peasy": "3.2.0",
     "electron": "^6.1.4",
-    "electron-builder": "^21.2.0",
+    "electron-builder": "^22.1.0",
     "electron-devtools-installer": "^2.2.4",
     "eslint": "6.6.0",
     "eslint-config-prettier": "^6.5.0",
