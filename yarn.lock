@@ -6113,10 +6113,10 @@ duplexify@^3.4.2, duplexify@^3.6.0:
     readable-stream "^2.0.0"
     stream-shift "^1.0.0"
 
-easy-peasy@3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/easy-peasy/-/easy-peasy-3.2.0.tgz#9c43539160d7fed19afc36fe04442d33762b0adb"
-  integrity sha512-RcYIMxKlYg663m+/Li1/ZXbN/PwSuGQ4n6ZlHNZnqJkpqt975R7yJIm4xBg1QeoeZSmiSnMnKAxlCzkq7jLM8w==
+easy-peasy@3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/easy-peasy/-/easy-peasy-3.2.1.tgz#bf744a9708ab4a2f6360078e88c5c96688d0ccf6"
+  integrity sha512-zSOoZAZ9oZz9yGL5FVoj7cXMaQ5jwemdr3diSE2lSZfGQSeMXcmUgZNYxLHuPsTS0FT8KLf6OxkNcSP4NAg29A==
   dependencies:
     debounce "^1.2.0"
     immer-peasy "3.1.3"
@@ -6127,7 +6127,7 @@ easy-peasy@3.2.0:
     redux-thunk "^2.3.0"
     shallowequal "^1.1.0"
     symbol-observable "^1.2.0"
-    ts-toolbelt "^4.9.29"
+    ts-toolbelt "^4.9.32"
 
 easy-stack@^1.0.0:
   version "1.0.0"
@@ -16613,10 +16613,10 @@ ts-pnp@^1.1.2:
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.1.4.tgz#ae27126960ebaefb874c6d7fa4729729ab200d90"
   integrity sha512-1J/vefLC+BWSo+qe8OnJQfWTYRS6ingxjwqmHMqaMxXMj7kFtKLgAaYW3JeX3mktjgUL+etlU8/B4VUAUI9QGw==
 
-ts-toolbelt@^4.9.29:
-  version "4.9.29"
-  resolved "https://registry.yarnpkg.com/ts-toolbelt/-/ts-toolbelt-4.9.29.tgz#3a5a7e419247ad6a24796c73ef4b511f7f5d490c"
-  integrity sha512-K3UkMlNloLNT5Bib1DTsr5M3aCro0Cbr/XA4nR9uEhGrK8GKaxN3Zh7o3PiwiBEX+Om+ULfo5MOcyikX20uPYg==
+ts-toolbelt@^4.9.32:
+  version "4.9.32"
+  resolved "https://registry.yarnpkg.com/ts-toolbelt/-/ts-toolbelt-4.9.32.tgz#c1239f5dfc8bc3848a38d4183bc6d2cdfdd866fa"
+  integrity sha512-yB5JAj6OMt7ymerQDpb8i2v+8leBg49TXaYeJ6nnu+NmH7ysUs796/edUxlNrX2ZGCrCA0PgQjNeuTTGeK7qJw==
 
 tslib@^1.8.1:
   version "1.10.0"
