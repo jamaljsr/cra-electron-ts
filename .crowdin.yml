@@ -1,3 +1,5 @@
+commit_message: "chore(i18n): New translations from Crowdin"                
+append_commit_message: false
 files:
   - source: /src/i18n/locales/en-US.json
     translation: /src/i18n/locales/%locale%.json
