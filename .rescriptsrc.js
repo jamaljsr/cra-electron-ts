@@ -11,8 +11,9 @@ const getLessLoader = (test, withModules) => {
           ? undefined
           : {
               sourceMap: true,
-              modules: true,
-              localIdentName: '[local]___[hash:base64:5]',
+              modules: {
+                localIdentName: '[local]___[hash:base64:5]',
+              },
             },
       },
       {
