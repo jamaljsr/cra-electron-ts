@@ -1,0 +1,5 @@
+files:
+  - source: /src/i18n/locales/*.json
+    ignore:
+      - /src/i18n/locales/en-US.json
+    translation: /src/i18n/locales/%locale%.json
