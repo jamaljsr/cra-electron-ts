@@ -1,5 +1,5 @@
-commit_message: "chore(i18n): new translations for %language%"                
+commit_message: 'chore(i18n): new translations for %language%'
 append_commit_message: false
 files:
   - source: /src/i18n/locales/en-US.json
-    translation: /src/i18n/locales/%locale%.json
+    translation: /src/i18n/locales/%two_letters_code%.json
