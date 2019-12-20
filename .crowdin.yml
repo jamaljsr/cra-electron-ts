@@ -1,4 +1,4 @@
-commit_message: "[ci skip] chore(i18n): New translations from Crowdin"                
+commit_message: "[ci skip] new %language% translations"                
 append_commit_message: false
 files:
   - source: /src/i18n/locales/en-US.json
