@@ -1,8 +1,18 @@
 {
-  "extends": ["config:base"],
+  "extends": ["config:js-app"],
   "rangeStrategy": "bump",
   "automerge": true,
-  "major": {
-    "automerge": false
-  }
+  "automergeType": "branch",
+  "masterIssue": true,
+  "masterIssueAutoclose": true,
+  "ignoreDeps": [
+    "babel-eslint",
+    "babel-jest",
+    "babel-loader",
+    "eslint",
+    "jest",
+    "webpack",
+    "webpack-dev-server",
+    "@radar/lnrpc"
+  ]
 }
