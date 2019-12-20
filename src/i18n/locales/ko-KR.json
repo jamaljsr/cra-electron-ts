@@ -10,6 +10,7 @@
   "cmps.home.me-btn": "Click Me!",
   "cmps.home.play": "Play with the <2>Counter</2> thing",
   "cmps.home.success-text": "Success Tips",
+  "cmps.home.test-crowdin": "Test Crowdin",
   "cmps.counter.increment": "Increment",
   "cmps.counter.decrement": "Decrement",
   "cmps.counter.increment-odd": "Increment Odd",
