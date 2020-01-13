@@ -67,7 +67,7 @@
     "connected-react-router": "6.6.1",
     "cross-env": "6.0.3",
     "easy-peasy": "3.2.6",
-    "electron": "7.1.8",
+    "electron": "7.1.9",
     "electron-builder": "21.2.0",
     "electron-devtools-installer": "2.2.4",
     "eslint": "6.6.0",
