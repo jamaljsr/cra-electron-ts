@@ -65,7 +65,7 @@
     "commitizen": "4.0.3",
     "concurrently": "5.0.2",
     "connected-react-router": "6.6.1",
-    "cross-env": "6.0.3",
+    "cross-env": "7.0.0",
     "easy-peasy": "3.3.0",
     "electron": "7.1.10",
     "electron-builder": "22.2.0",
