@@ -1,4 +1,4 @@
-# React Electron Starter
+# React Electron Typescript Starter
 
 > A production-ready starter template for ReactJS based cross-platform desktop apps.
 
