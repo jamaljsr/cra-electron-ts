@@ -64,7 +64,7 @@
     "codecov": "3.6.5",
     "commitizen": "4.0.3",
     "concurrently": "5.1.0",
-    "connected-react-router": "6.6.1",
+    "connected-react-router": "6.7.0",
     "cross-env": "7.0.0",
     "easy-peasy": "3.3.0",
     "electron": "8.0.0",
