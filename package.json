@@ -45,7 +45,7 @@
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
     "@hot-loader/react-dom": "16.13.0",
-    "@rescripts/cli": "0.0.13",
+    "@rescripts/cli": "0.0.14",
     "@rescripts/rescript-use-babel-config": "0.0.10",
     "@testing-library/jest-dom": "5.1.1",
     "@testing-library/react": "9.5.0",
