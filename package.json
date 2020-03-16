@@ -78,7 +78,7 @@
     "husky": "4.2.3",
     "i18next": "19.3.2",
     "i18next-browser-languagedetector": "4.0.2",
-    "i18next-scanner": "2.10.3",
+    "i18next-scanner": "2.11.0",
     "less": "3.11.1",
     "less-loader": "5.0.0",
     "lint-staged": "10.0.8",
