@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "electron-debug": "3.0.1",
-    "electron-is-dev": "1.1.0",
+    "electron-is-dev": "1.2.0",
     "electron-log": "4.1.1"
   },
   "devDependencies": {
