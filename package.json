@@ -80,7 +80,7 @@
     "i18next-browser-languagedetector": "4.1.1",
     "i18next-scanner": "2.11.0",
     "less": "3.11.1",
-    "less-loader": "5.0.0",
+    "less-loader": "6.0.0",
     "lint-staged": "10.1.7",
     "prettier": "1.19.1",
     "react": "16.13.1",
